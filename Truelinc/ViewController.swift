@@ -30,13 +30,22 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         super.viewDidAppear(animated)
         
         if(PFUser.currentUser() == nil){
-        //    self.logIngViewController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.SignUpButton | PFLogInFields.PasswordForgotten | PFLogInFields.DismissButton
+        
+            
+           self.logIngViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten, .DismissButton]
             
             var logInlogoTitle = UILabel()
             logInlogoTitle.text = "Truelinc"
             
-
+            self.logIngViewController.logInView?.logo = logInlogoTitle
+            self.logIngViewController.delegate = self
             
+            var signUpLogoTitle = UILabel()
+            signUpLogoTitle.text = "Truelinc";
+            self.singUpViewController.signUpView?.logo = signUpLogoTitle
+            self.singUpViewController.delegate = self
+            
+            self.logIngViewController.signUpController = self.singUpViewController   
         }
     }
 
@@ -44,38 +53,53 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
         
-        return true
+        if(!username.isEmpty || !password.isEmpty){
+            return true
+        }else{
+            return false
+        }
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         
-    
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        
+        print("Failed Login")
     }
     
     //MARk:  Parse sign up
     
     
-    func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [String : String]) -> Bool {
-        
-                return true
-    }
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        
+        self.dismissViewControllerAnimated(true, completion:nil)
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        
+                    print("failed  sing up")
     }
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        
+        print("user dismssed sing up")
     }
     
+    
+    //MARK: Actions
+    
+//    @IBAction func loginAction (sender: AnyObject){
+//        self.presentViewController(self.logIngViewController, animated: true, completion: nil)
+//    }
+//    
+//    
+//    @IBAction func signupAction (sender: AnyObject){
+//        self.performSegueWithIdentifier("loginSegue", sender: self)
+//    }
+    
+    @IBAction func logoutAction (sender: AnyObject){
+        PFUser.logOut()
+    }
     
 }
 
