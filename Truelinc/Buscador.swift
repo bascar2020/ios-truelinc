@@ -9,6 +9,7 @@
 import Foundation
 class Buscador : UIViewController {
     
+
     @IBOutlet weak var abrir: UIBarButtonItem!
     override func viewDidLoad() {
         

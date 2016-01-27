@@ -9,16 +9,33 @@
 import UIKit
 import Foundation
 
-class Mis_Tarjetas: UIViewController {
-    
+class Mis_Tarjetas: UITableViewController {
+ 
     @IBOutlet weak var abrir: UIBarButtonItem!
     override func viewDidLoad() {
-
+        
+        
         abrir.target = self.revealViewController()
+        
         abrir.action = Selector("revealToggle:")
+        
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
 }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 0
+    
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
 }
 
