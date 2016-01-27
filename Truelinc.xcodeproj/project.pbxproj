@@ -46,6 +46,13 @@
 		62B59C521C4EA50000CF5028 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C511C4EA50000CF5028 /* libsqlite3.dylib */; };
 		62B59C531C4EA50A00CF5028 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4B1C4EA12000CF5028 /* libz.tbd */; };
 		62B59C541C4EA51300CF5028 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */; };
+		CE8A23B61C5818A900B87F1F /* Mis_Tarjetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */; };
+		CE8A23BC1C58232500B87F1F /* Buscador.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23BB1C58232400B87F1F /* Buscador.swift */; };
+		CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23BD1C58236A00B87F1F /* Camara.swift */; };
+		CEBD18901C56E3EE0078476F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD188F1C56E3EE0078476F /* SWRevealViewController.m */; };
+		CEBD18921C56E5050078476F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD18911C56E5040078476F /* MenuViewController.swift */; };
+		CEBD18941C56E8CA0078476F /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBD18931C56E8C90078476F /* menu.png */; };
+		CEBD18961C56F2910078476F /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD18951C56F2910078476F /* BackTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +110,15 @@
 		62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		62B59C4F1C4EA4C200CF5028 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
 		62B59C511C4EA50000CF5028 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mis_Tarjetas.swift; sourceTree = "<group>"; };
+		CE8A23BB1C58232400B87F1F /* Buscador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buscador.swift; sourceTree = "<group>"; };
+		CE8A23BD1C58236A00B87F1F /* Camara.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camara.swift; sourceTree = "<group>"; };
+		CEBD188D1C56E3EA0078476F /* Truelinc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Truelinc-Bridging-Header.h"; sourceTree = "<group>"; };
+		CEBD188E1C56E3EE0078476F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		CEBD188F1C56E3EE0078476F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		CEBD18911C56E5040078476F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CEBD18931C56E8C90078476F /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		CEBD18951C56F2910078476F /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +174,13 @@
 		62454CBC1C47785000C79048 /* Truelinc */ = {
 			isa = PBXGroup;
 			children = (
+				CEBD18911C56E5040078476F /* MenuViewController.swift */,
 				62AC32231C505B80000B9A2F /* drawable */,
 				62454CC31C47785000C79048 /* Main.storyboard */,
+				CEBD18951C56F2910078476F /* BackTableVC.swift */,
+				CE8A23BB1C58232400B87F1F /* Buscador.swift */,
+				CE8A23BD1C58236A00B87F1F /* Camara.swift */,
+				CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */,
 				62454CC61C47785000C79048 /* Images.xcassets */,
 				62454CBF1C47785000C79048 /* AppDelegate.swift */,
 				62454CC11C47785000C79048 /* ViewController.swift */,
@@ -174,6 +195,9 @@
 		62454CBD1C47785000C79048 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEBD188E1C56E3EE0078476F /* SWRevealViewController.h */,
+				CEBD188F1C56E3EE0078476F /* SWRevealViewController.m */,
+				CEBD188D1C56E3EA0078476F /* Truelinc-Bridging-Header.h */,
 				625F1CA91C5012E60035B159 /* Frameworks */,
 				62454CBE1C47785000C79048 /* Info.plist */,
 			);
@@ -222,6 +246,7 @@
 		62AC32231C505B80000B9A2F /* drawable */ = {
 			isa = PBXGroup;
 			children = (
+				CEBD18931C56E8C90078476F /* menu.png */,
 				62AC32241C505BD1000B9A2F /* card_background_white.9.png */,
 				62AC32251C505BD1000B9A2F /* city.jpg */,
 				62AC32261C505BD1000B9A2F /* face.png */,
@@ -326,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62AC323A1C505BD1000B9A2F /* ic_maps_local_phone.png in Resources */,
+				CEBD18941C56E8CA0078476F /* menu.png in Resources */,
 				62454CC51C47785000C79048 /* Main.storyboard in Resources */,
 				62AC32361C505BD1000B9A2F /* city.jpg in Resources */,
 				62AC32451C505BD1000B9A2F /* www.png in Resources */,
@@ -362,10 +388,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */,
 				62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */,
+				CEBD18921C56E5050078476F /* MenuViewController.swift in Sources */,
 				62454CC21C47785000C79048 /* ViewController.swift in Sources */,
+				CE8A23B61C5818A900B87F1F /* Mis_Tarjetas.swift in Sources */,
+				CEBD18901C56E3EE0078476F /* SWRevealViewController.m in Sources */,
 				62AC32471C50A960000B9A2F /* SignupViewController.swift in Sources */,
+				CE8A23BC1C58232500B87F1F /* Buscador.swift in Sources */,
 				62454CC01C47785000C79048 /* AppDelegate.swift in Sources */,
+				CEBD18961C56F2910078476F /* BackTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -506,7 +539,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.com.Indibyte.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Truelinc/Truelinc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -514,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -525,7 +560,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.com.Indibyte.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Truelinc/Truelinc-Bridging-Header.h";
 			};
 			name = Release;
 		};
