@@ -53,9 +53,14 @@ class LoginViewController: UIViewController {
                     self.actInd.stopAnimating()
                     
                     if((user) != nil){
-                    let alert = UIAlertView(title: "Succses", message: "logged IN", delegate: self, cancelButtonTitle: "OK")
-                        alert.show()
-                    }else{
+//                    let alert = UIAlertView(title: "Succses", message: "logged IN", delegate: self, cancelButtonTitle: "OK")
+//                        alert.show()
+                        self.performSegueWithIdentifier("tarjetasSegue", sender: self)
+                        
+                    }
+                
+                    else
+                        {
                         let alert = UIAlertView(title: "Failed", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
                     }

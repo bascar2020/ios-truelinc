@@ -35,6 +35,10 @@
 		62AC32451C505BD1000B9A2F /* www.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AC32341C505BD1000B9A2F /* www.png */; };
 		62AC32471C50A960000B9A2F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC32461C50A960000B9A2F /* SignupViewController.swift */; };
 		62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC32481C50A9EF000B9A2F /* LoginViewController.swift */; };
+		62AC324B1C5169FA000B9A2F /* TarjetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC324A1C5169FA000B9A2F /* TarjetasViewController.swift */; };
+		62AC324E1C517BB4000B9A2F /* TarjetasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC324D1C517BB4000B9A2F /* TarjetasTableViewController.swift */; };
+		62AC32501C517C24000B9A2F /* BaseTarjetasViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC324F1C517C24000B9A2F /* BaseTarjetasViewCell.swift */; };
+		62AC32521C518A69000B9A2F /* PreviewTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC32511C518A69000B9A2F /* PreviewTarjetaViewController.swift */; };
 		62B59C3C1C4EA0CF00CF5028 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C3B1C4EA0CF00CF5028 /* AudioToolbox.framework */; };
 		62B59C3E1C4EA0DB00CF5028 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C3D1C4EA0DB00CF5028 /* CFNetwork.framework */; };
 		62B59C401C4EA0E300CF5028 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C3F1C4EA0E300CF5028 /* CoreGraphics.framework */; };
@@ -91,6 +95,10 @@
 		62AC32341C505BD1000B9A2F /* www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = www.png; path = drawable/www.png; sourceTree = "<group>"; };
 		62AC32461C50A960000B9A2F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		62AC32481C50A9EF000B9A2F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		62AC324A1C5169FA000B9A2F /* TarjetasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarjetasViewController.swift; sourceTree = "<group>"; };
+		62AC324D1C517BB4000B9A2F /* TarjetasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarjetasTableViewController.swift; sourceTree = "<group>"; };
+		62AC324F1C517C24000B9A2F /* BaseTarjetasViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTarjetasViewCell.swift; sourceTree = "<group>"; };
+		62AC32511C518A69000B9A2F /* PreviewTarjetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTarjetaViewController.swift; sourceTree = "<group>"; };
 		62B59C3B1C4EA0CF00CF5028 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		62B59C3D1C4EA0DB00CF5028 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		62B59C3F1C4EA0E300CF5028 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,6 +166,7 @@
 		62454CBC1C47785000C79048 /* Truelinc */ = {
 			isa = PBXGroup;
 			children = (
+				62AC324C1C517753000B9A2F /* Model */,
 				62AC32231C505B80000B9A2F /* drawable */,
 				62454CC31C47785000C79048 /* Main.storyboard */,
 				62454CC61C47785000C79048 /* Images.xcassets */,
@@ -167,6 +176,10 @@
 				62454CBD1C47785000C79048 /* Supporting Files */,
 				62AC32461C50A960000B9A2F /* SignupViewController.swift */,
 				62AC32481C50A9EF000B9A2F /* LoginViewController.swift */,
+				62AC324A1C5169FA000B9A2F /* TarjetasViewController.swift */,
+				62AC324D1C517BB4000B9A2F /* TarjetasTableViewController.swift */,
+				62AC324F1C517C24000B9A2F /* BaseTarjetasViewCell.swift */,
+				62AC32511C518A69000B9A2F /* PreviewTarjetaViewController.swift */,
 			);
 			path = Truelinc;
 			sourceTree = "<group>";
@@ -241,6 +254,13 @@
 				62AC32341C505BD1000B9A2F /* www.png */,
 			);
 			name = drawable;
+			sourceTree = "<group>";
+		};
+		62AC324C1C517753000B9A2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,10 +382,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AC32501C517C24000B9A2F /* BaseTarjetasViewCell.swift in Sources */,
+				62AC324B1C5169FA000B9A2F /* TarjetasViewController.swift in Sources */,
 				62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */,
 				62454CC21C47785000C79048 /* ViewController.swift in Sources */,
 				62AC32471C50A960000B9A2F /* SignupViewController.swift in Sources */,
+				62AC32521C518A69000B9A2F /* PreviewTarjetaViewController.swift in Sources */,
 				62454CC01C47785000C79048 /* AppDelegate.swift in Sources */,
+				62AC324E1C517BB4000B9A2F /* TarjetasTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
