@@ -62,11 +62,12 @@ class SignupViewController: UIViewController {
                     self.actInd.stopAnimating()
                     
                     if((error) != nil){
-                        let alert = UIAlertView(title: "Exito", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                        let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
                     }else{
                         let alert = UIAlertView(title: "Exito", message: "Usuario Creado con exito", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
+                        self.performSegueWithIdentifier("tarjetaSegueDos", sender: self);
                     }
                 })
                 }
