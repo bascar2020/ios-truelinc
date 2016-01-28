@@ -19,6 +19,11 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if  PFUser.currentUser() != nil {
+
+          self.performSegueWithIdentifier("loginSegue", sender: self)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +39,13 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
            self.logIngViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten, .DismissButton]
             
-            var logInlogoTitle = UILabel()
+            let logInlogoTitle = UILabel()
             logInlogoTitle.text = "Truelinc"
             
             self.logIngViewController.logInView?.logo = logInlogoTitle
             self.logIngViewController.delegate = self
             
-            var signUpLogoTitle = UILabel()
+            let signUpLogoTitle = UILabel()
             signUpLogoTitle.text = "Truelinc";
             self.singUpViewController.signUpView?.logo = signUpLogoTitle
             self.singUpViewController.delegate = self

@@ -35,10 +35,6 @@
 		62AC32451C505BD1000B9A2F /* www.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AC32341C505BD1000B9A2F /* www.png */; };
 		62AC32471C50A960000B9A2F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC32461C50A960000B9A2F /* SignupViewController.swift */; };
 		62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC32481C50A9EF000B9A2F /* LoginViewController.swift */; };
-		62AC324B1C5169FA000B9A2F /* TarjetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC324A1C5169FA000B9A2F /* TarjetasViewController.swift */; };
-		62AC324E1C517BB4000B9A2F /* TarjetasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC324D1C517BB4000B9A2F /* TarjetasTableViewController.swift */; };
-		62AC32501C517C24000B9A2F /* BaseTarjetasViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC324F1C517C24000B9A2F /* BaseTarjetasViewCell.swift */; };
-		62AC32521C518A69000B9A2F /* PreviewTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC32511C518A69000B9A2F /* PreviewTarjetaViewController.swift */; };
 		62B59C3C1C4EA0CF00CF5028 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C3B1C4EA0CF00CF5028 /* AudioToolbox.framework */; };
 		62B59C3E1C4EA0DB00CF5028 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C3D1C4EA0DB00CF5028 /* CFNetwork.framework */; };
 		62B59C401C4EA0E300CF5028 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C3F1C4EA0E300CF5028 /* CoreGraphics.framework */; };
@@ -50,6 +46,7 @@
 		62B59C521C4EA50000CF5028 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C511C4EA50000CF5028 /* libsqlite3.dylib */; };
 		62B59C531C4EA50A00CF5028 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4B1C4EA12000CF5028 /* libz.tbd */; };
 		62B59C541C4EA51300CF5028 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */; };
+		62F8322F1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */; };
 		CE8A23B61C5818A900B87F1F /* Mis_Tarjetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */; };
 		CE8A23BC1C58232500B87F1F /* Buscador.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23BB1C58232400B87F1F /* Buscador.swift */; };
 		CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23BD1C58236A00B87F1F /* Camara.swift */; };
@@ -102,10 +99,6 @@
 		62AC32341C505BD1000B9A2F /* www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = www.png; path = drawable/www.png; sourceTree = "<group>"; };
 		62AC32461C50A960000B9A2F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		62AC32481C50A9EF000B9A2F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		62AC324A1C5169FA000B9A2F /* TarjetasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarjetasViewController.swift; sourceTree = "<group>"; };
-		62AC324D1C517BB4000B9A2F /* TarjetasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarjetasTableViewController.swift; sourceTree = "<group>"; };
-		62AC324F1C517C24000B9A2F /* BaseTarjetasViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTarjetasViewCell.swift; sourceTree = "<group>"; };
-		62AC32511C518A69000B9A2F /* PreviewTarjetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTarjetaViewController.swift; sourceTree = "<group>"; };
 		62B59C3B1C4EA0CF00CF5028 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		62B59C3D1C4EA0DB00CF5028 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		62B59C3F1C4EA0E300CF5028 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +111,7 @@
 		62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		62B59C4F1C4EA4C200CF5028 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
 		62B59C511C4EA50000CF5028 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTowCellTableViewCell.swift; sourceTree = "<group>"; };
 		CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mis_Tarjetas.swift; sourceTree = "<group>"; };
 		CE8A23BB1C58232400B87F1F /* Buscador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buscador.swift; sourceTree = "<group>"; };
 		CE8A23BD1C58236A00B87F1F /* Camara.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camara.swift; sourceTree = "<group>"; };
@@ -182,7 +176,8 @@
 		62454CBC1C47785000C79048 /* Truelinc */ = {
 			isa = PBXGroup;
 			children = (
-				62AC324C1C517753000B9A2F /* Model */,
+				62F8322D1C595246000EAD84 /* Model */,
+				CEBD18911C56E5040078476F /* MenuViewController.swift */,
 				62AC32231C505B80000B9A2F /* drawable */,
 				62454CC31C47785000C79048 /* Main.storyboard */,
 				CEBD18951C56F2910078476F /* BackTableVC.swift */,
@@ -196,10 +191,7 @@
 				62454CBD1C47785000C79048 /* Supporting Files */,
 				62AC32461C50A960000B9A2F /* SignupViewController.swift */,
 				62AC32481C50A9EF000B9A2F /* LoginViewController.swift */,
-				62AC324A1C5169FA000B9A2F /* TarjetasViewController.swift */,
-				62AC324D1C517BB4000B9A2F /* TarjetasTableViewController.swift */,
-				62AC324F1C517C24000B9A2F /* BaseTarjetasViewCell.swift */,
-				62AC32511C518A69000B9A2F /* PreviewTarjetaViewController.swift */,
+				62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */,
 			);
 			path = Truelinc;
 			sourceTree = "<group>";
@@ -280,7 +272,7 @@
 			name = drawable;
 			sourceTree = "<group>";
 		};
-		62AC324C1C517753000B9A2F /* Model */ = {
+		62F8322D1C595246000EAD84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -407,17 +399,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62AC32501C517C24000B9A2F /* BaseTarjetasViewCell.swift in Sources */,
-				62AC324B1C5169FA000B9A2F /* TarjetasViewController.swift in Sources */,
+				CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */,
 				62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */,
 				CEBD18921C56E5050078476F /* MenuViewController.swift in Sources */,
 				62454CC21C47785000C79048 /* ViewController.swift in Sources */,
 				CE8A23B61C5818A900B87F1F /* Mis_Tarjetas.swift in Sources */,
 				CEBD18901C56E3EE0078476F /* SWRevealViewController.m in Sources */,
+				62F8322F1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift in Sources */,
 				62AC32471C50A960000B9A2F /* SignupViewController.swift in Sources */,
-				62AC32521C518A69000B9A2F /* PreviewTarjetaViewController.swift in Sources */,
+				CE8A23BC1C58232500B87F1F /* Buscador.swift in Sources */,
 				62454CC01C47785000C79048 /* AppDelegate.swift in Sources */,
-				62AC324E1C517BB4000B9A2F /* TarjetasTableViewController.swift in Sources */,
+				CEBD18961C56F2910078476F /* BackTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

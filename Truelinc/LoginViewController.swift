@@ -22,10 +22,24 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+      
+        
+        
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(self.actInd)
+        
+      
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if  PFUser.currentUser() != nil {
+            print("bandera entre a login")
+            self.performSegueWithIdentifier("tarjetaSegue", sender: self)
+        }
     }
     
     override func didReceiveMemoryWarning() {
