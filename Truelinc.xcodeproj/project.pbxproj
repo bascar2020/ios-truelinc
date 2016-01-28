@@ -47,12 +47,16 @@
 		62B59C531C4EA50A00CF5028 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4B1C4EA12000CF5028 /* libz.tbd */; };
 		62B59C541C4EA51300CF5028 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */; };
 		62F8322F1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */; };
+		62F832311C5A9F6E000EAD84 /* TarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F832301C5A9F6E000EAD84 /* TarjetaViewController.swift */; };
+		62F832331C5A9F78000EAD84 /* QrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F832321C5A9F78000EAD84 /* QrViewController.swift */; };
+		62F8323B1C5AA173000EAD84 /* ic_action_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F832381C5AA173000EAD84 /* ic_action_home.png */; };
+		62F8323C1C5AA173000EAD84 /* ic_maps_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F832391C5AA173000EAD84 /* ic_maps_place.png */; };
+		62F8323D1C5AA173000EAD84 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F8323A1C5AA173000EAD84 /* menu.png */; };
 		CE8A23B61C5818A900B87F1F /* Mis_Tarjetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */; };
 		CE8A23BC1C58232500B87F1F /* Buscador.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23BB1C58232400B87F1F /* Buscador.swift */; };
 		CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A23BD1C58236A00B87F1F /* Camara.swift */; };
 		CEBD18901C56E3EE0078476F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD188F1C56E3EE0078476F /* SWRevealViewController.m */; };
 		CEBD18921C56E5050078476F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD18911C56E5040078476F /* MenuViewController.swift */; };
-		CEBD18941C56E8CA0078476F /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBD18931C56E8C90078476F /* menu.png */; };
 		CEBD18961C56F2910078476F /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD18951C56F2910078476F /* BackTableVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +116,11 @@
 		62B59C4F1C4EA4C200CF5028 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
 		62B59C511C4EA50000CF5028 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTowCellTableViewCell.swift; sourceTree = "<group>"; };
+		62F832301C5A9F6E000EAD84 /* TarjetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarjetaViewController.swift; sourceTree = "<group>"; };
+		62F832321C5A9F78000EAD84 /* QrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrViewController.swift; sourceTree = "<group>"; };
+		62F832381C5AA173000EAD84 /* ic_action_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_action_home.png; path = drawable/ic_action_home.png; sourceTree = "<group>"; };
+		62F832391C5AA173000EAD84 /* ic_maps_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_maps_place.png; path = drawable/ic_maps_place.png; sourceTree = "<group>"; };
+		62F8323A1C5AA173000EAD84 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = drawable/menu.png; sourceTree = "<group>"; };
 		CE8A23B51C5818A800B87F1F /* Mis_Tarjetas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mis_Tarjetas.swift; sourceTree = "<group>"; };
 		CE8A23BB1C58232400B87F1F /* Buscador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buscador.swift; sourceTree = "<group>"; };
 		CE8A23BD1C58236A00B87F1F /* Camara.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camara.swift; sourceTree = "<group>"; };
@@ -119,7 +128,6 @@
 		CEBD188E1C56E3EE0078476F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CEBD188F1C56E3EE0078476F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CEBD18911C56E5040078476F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		CEBD18931C56E8C90078476F /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		CEBD18951C56F2910078476F /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +200,8 @@
 				62AC32461C50A960000B9A2F /* SignupViewController.swift */,
 				62AC32481C50A9EF000B9A2F /* LoginViewController.swift */,
 				62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */,
+				62F832301C5A9F6E000EAD84 /* TarjetaViewController.swift */,
+				62F832321C5A9F78000EAD84 /* QrViewController.swift */,
 			);
 			path = Truelinc;
 			sourceTree = "<group>";
@@ -250,7 +260,9 @@
 		62AC32231C505B80000B9A2F /* drawable */ = {
 			isa = PBXGroup;
 			children = (
-				CEBD18931C56E8C90078476F /* menu.png */,
+				62F832381C5AA173000EAD84 /* ic_action_home.png */,
+				62F832391C5AA173000EAD84 /* ic_maps_place.png */,
+				62F8323A1C5AA173000EAD84 /* menu.png */,
 				62AC32241C505BD1000B9A2F /* card_background_white.9.png */,
 				62AC32251C505BD1000B9A2F /* city.jpg */,
 				62AC32261C505BD1000B9A2F /* face.png */,
@@ -362,8 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				62AC323A1C505BD1000B9A2F /* ic_maps_local_phone.png in Resources */,
-				CEBD18941C56E8CA0078476F /* menu.png in Resources */,
 				62454CC51C47785000C79048 /* Main.storyboard in Resources */,
+				62F8323D1C5AA173000EAD84 /* menu.png in Resources */,
 				62AC32361C505BD1000B9A2F /* city.jpg in Resources */,
 				62AC32451C505BD1000B9A2F /* www.png in Resources */,
 				62AC32441C505BD1000B9A2F /* tweet.png in Resources */,
@@ -376,11 +388,13 @@
 				62AC323B1C505BD1000B9A2F /* ic_maps_local_post_office.png in Resources */,
 				62AC323C1C505BD1000B9A2F /* icon_app.png in Resources */,
 				62AC323E1C505BD1000B9A2F /* launcher_icon.png in Resources */,
+				62F8323C1C5AA173000EAD84 /* ic_maps_place.png in Resources */,
 				62AC32401C505BD1000B9A2F /* logolargo.png in Resources */,
 				62454CC71C47785000C79048 /* Images.xcassets in Resources */,
 				62AC32381C505BD1000B9A2F /* franja.png in Resources */,
 				62AC32391C505BD1000B9A2F /* ic_communication_phone.png in Resources */,
 				62AC32411C505BD1000B9A2F /* no_perfil.png in Resources */,
+				62F8323B1C5AA173000EAD84 /* ic_action_home.png in Resources */,
 				62AC323D1C505BD1000B9A2F /* indi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62F832311C5A9F6E000EAD84 /* TarjetaViewController.swift in Sources */,
 				CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */,
 				62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */,
 				CEBD18921C56E5050078476F /* MenuViewController.swift in Sources */,
@@ -406,6 +421,7 @@
 				CE8A23B61C5818A900B87F1F /* Mis_Tarjetas.swift in Sources */,
 				CEBD18901C56E3EE0078476F /* SWRevealViewController.m in Sources */,
 				62F8322F1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift in Sources */,
+				62F832331C5A9F78000EAD84 /* QrViewController.swift in Sources */,
 				62AC32471C50A960000B9A2F /* SignupViewController.swift in Sources */,
 				CE8A23BC1C58232500B87F1F /* Buscador.swift in Sources */,
 				62454CC01C47785000C79048 /* AppDelegate.swift in Sources */,
