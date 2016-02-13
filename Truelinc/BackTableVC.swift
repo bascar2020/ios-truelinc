@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 class BackTableVC: UITableViewController{
 
@@ -30,4 +31,18 @@ class BackTableVC: UITableViewController{
         return cell
         
     }
-}
+    
+
+    
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+                //print(indexPath.row)
+                if (indexPath.row == 3){
+                    PFUser.logOut()
+                    self.performSegueWithIdentifier("segueLogOut", sender: self);
+                    
+                    }
+
+        return indexPath
+    }
+    
+}   

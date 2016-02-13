@@ -11,16 +11,20 @@ import UIKit
 class TarjetaViewController: UIViewController {
 
     
-    
 
+    @IBOutlet weak var img_logo: UIImageView!
     @IBOutlet weak var Scroll: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+  
         
-        self.Scroll.contentSize.height = 480
-
+        
+        img_logo.layer.cornerRadius = img_logo.frame.size.width/2
+        img_logo.clipsToBounds = true
  
-
+        self.Scroll.backgroundColor = UIColor(patternImage: UIImage(named: "city.jpg")!)
+        
+        
         // Do any additional setup after loading the view.
 
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Truelinc/BackTableVC.swift"
-            timestampString = "475461349.827542"
+            timestampString = "476223471.114866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "BackTableVC"
             landmarkType = "3">
          </BreakpointContent>

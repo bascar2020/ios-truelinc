@@ -21,6 +21,9 @@ class SingleTowCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.img_logo.layer.cornerRadius = img_logo.frame.size.width/2
+        self.img_logo.clipsToBounds = true
         // Initialization code
     }
 

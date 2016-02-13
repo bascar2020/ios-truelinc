@@ -23,8 +23,21 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
 
           self.performSegueWithIdentifier("loginSegue", sender: self)
             
+
+    
         }
+        
+  
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+        super.viewWillAppear(animated)
+    }
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

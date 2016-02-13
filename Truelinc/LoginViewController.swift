@@ -11,7 +11,7 @@ import Parse
 
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,  UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -23,7 +23,8 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-      
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
         
         
         self.actInd.center = self.view.center
@@ -31,10 +32,16 @@ class LoginViewController: UIViewController {
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(self.actInd)
         
+        
       
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return true
+        
+    }
+
     override func viewDidAppear(animated: Bool) {
         if  PFUser.currentUser() != nil {
             print("bandera entre a login")
@@ -45,6 +52,11 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        
     }
     
     

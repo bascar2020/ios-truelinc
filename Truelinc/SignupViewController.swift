@@ -11,11 +11,10 @@ import Parse
 
 
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordTwoField: UITextField!
     
@@ -24,16 +23,32 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+        self.passwordTwoField.delegate = self
+        
+        
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(self.actInd)
+        
+
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        
+    }
+    
     
     
     
