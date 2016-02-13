@@ -11,11 +11,10 @@ import Parse
 
 
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordTwoField: UITextField!
     
@@ -24,16 +23,60 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+        self.passwordTwoField.delegate = self
+        
+        
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(self.actInd)
+        
+
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        if(self.view.frame.origin.y == 0){
+        
+            self.view.frame.origin.y -= 215
+        
+        }
+        
+    }
+    func keyboardWillHide(sender: NSNotification) {
+        if(self.view.frame.origin.y == -215){
+            
+            self.view.frame.origin.y += 215
+            
+        }
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        
+    }
+    
+    
     
     
     
@@ -62,11 +105,12 @@ class SignupViewController: UIViewController {
                     self.actInd.stopAnimating()
                     
                     if((error) != nil){
-                        let alert = UIAlertView(title: "Exito", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                        let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
                     }else{
                         let alert = UIAlertView(title: "Exito", message: "Usuario Creado con exito", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
+                        self.performSegueWithIdentifier("tarjetaSegueDos", sender: self);
                     }
                 })
                 }

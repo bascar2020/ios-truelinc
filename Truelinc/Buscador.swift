@@ -13,6 +13,11 @@ class Buscador : UIViewController {
     @IBOutlet weak var abrir: UIBarButtonItem!
     override func viewDidLoad() {
         
+        
+        let logo = UIImage(named: "logoT")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
         abrir.target = self.revealViewController()
         abrir.action = Selector("revealToggle:")
         
