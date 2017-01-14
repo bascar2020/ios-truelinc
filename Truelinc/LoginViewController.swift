@@ -8,15 +8,30 @@
 
 import UIKit
 import Parse
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
 
 
-class LoginViewController: UIViewController,  UITextFieldDelegate {
+
+class LoginViewController: UIViewController,  UITextFieldDelegate  {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+
+
     
-    var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
+    var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0,width: 150,height: 150)) as UIActivityIndicatorView
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,39 +44,92 @@ class LoginViewController: UIViewController,  UITextFieldDelegate {
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
-        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(self.actInd)
-        
-        
-      
-        
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        return true
         
     }
 
-    override func viewDidAppear(animated: Bool) {
-        if  PFUser.currentUser() != nil {
-            print("bandera entre a login")
-            self.performSegueWithIdentifier("tarjetaSegue", sender: self)
+ 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        
+        
+    }
+    
+    func keyboardWillShow(_ sender: Notification) {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+
+        
+        switch screenHeight {
+        
+        case 480.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 150}
+        case 568.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 90}
+        case 667.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 40}
+        case 736.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 15}
+        default :
+            self.view.frame.origin.y -= 100
         }
     }
+    
+    func keyboardWillHide(_ sender: Notification) {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+
+        
+        switch screenHeight {
+            
+        case 480.0 :
+            if(self.view.frame.origin.y == -150){
+                self.view.frame.origin.y += 150}
+        case 568.0 :
+            if(self.view.frame.origin.y == -90){
+                self.view.frame.origin.y += 90}
+        case 667.0 :
+            if(self.view.frame.origin.y == -40){
+                self.view.frame.origin.y += 40}
+        case 736.0 :
+            if(self.view.frame.origin.y == -15){
+                self.view.frame.origin.y += 15}
+        default :
+            self.view.frame.origin.y += 100
+            
+            
+        }
+
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
         
     }
     
     
     
-    @IBAction func loginAction(sender: AnyObject) {
+    @IBAction func loginAction(_ sender: AnyObject) {
         
        
         let username = self.usernameField.text
@@ -74,16 +142,16 @@ class LoginViewController: UIViewController,  UITextFieldDelegate {
         }else{
             self.actInd.startAnimating()
             
-                PFUser.logInWithUsernameInBackground(username!, password: password, block: { (user, error) -> Void in
+                PFUser.logInWithUsername(inBackground: username!, password: password, block: { (user, error) -> Void in
                     
                     self.actInd.stopAnimating()
                     
                     if((user) != nil){
                         //                    let alert = UIAlertView(title: "Succses", message: "logged IN",       delegate: self, cancelButtonTitle: "OK")
                         //                        alert.show()
-                        self.performSegueWithIdentifier("tarjetaSegue", sender: self)
+                        self.performSegue(withIdentifier: "tarjetaSegue", sender: self)
                     }else{
-                        let alert = UIAlertView(title: "Failed", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                        let alert = UIAlertView(title: "Failed", message: "Error Login", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
                     }
                     

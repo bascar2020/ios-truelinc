@@ -10,10 +10,14 @@ import UIKit
 
 class QrViewController: UIViewController {
 
+    @IBOutlet weak var img_qr_Full: UIImageView!
+    
+    var viaSegueQrFull = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+              img_qr_Full.image = viaSegueQrFull
+     
 
         // Do any additional setup after loading the view.
     }

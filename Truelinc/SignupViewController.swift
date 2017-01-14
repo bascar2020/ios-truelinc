@@ -8,6 +8,19 @@
 
 import UIKit
 import Parse
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 
 
@@ -18,11 +31,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordTwoField: UITextField!
     
-        var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
+        var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0,width: 150,height: 150)) as UIActivityIndicatorView
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
         self.usernameField.delegate = self
         self.passwordField.delegate = self
@@ -31,28 +46,89 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         
         self.actInd.center = self.view.center
         self.actInd.hidesWhenStopped = true
-        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(self.actInd)
+        
         
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(SignupViewController.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(SignupViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+    }
+    
+    func keyboardWillShow(_ sender: Notification) {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height
 
+        
+        switch screenHeight {
+            
+        case 480.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 212}
+        case 568.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 135}
+        case 667.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 80}
+        case 736.0 :
+            if(self.view.frame.origin.y == 0){
+                self.view.frame.origin.y -= 40}
+        default :
+            self.view.frame.origin.y -= 100
+            
+            
+        }
+        
+    }
+    func keyboardWillHide(_ sender: Notification) {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+
+        
+        switch screenHeight {
+            
+        case 480.0 :
+            if(self.view.frame.origin.y == -212){
+                self.view.frame.origin.y += 212}
+        case 568.0 :
+            if(self.view.frame.origin.y == -135){
+                self.view.frame.origin.y += 135}
+        case 667.0 :
+            if(self.view.frame.origin.y == -80){
+                self.view.frame.origin.y += 80}
+        case 736.0 :
+            if(self.view.frame.origin.y == -40){
+                self.view.frame.origin.y += 40}
+        default :
+            self.view.frame.origin.y += 100
+            
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
         
     }
     
     
     
     
-    @IBAction func signupAction(sender: AnyObject) {
+    
+    @IBAction func signupAction(_ sender: AnyObject) {
     
         let username = self.usernameField.text
         let password = self.passwordField.text!
@@ -73,7 +149,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
                 newUser.username = username
                 newUser.password = password
                 
-                newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+                newUser.signUpInBackground(block: { (succeed, error) -> Void in
                     self.actInd.stopAnimating()
                     
                     if((error) != nil){
@@ -82,7 +158,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
                     }else{
                         let alert = UIAlertView(title: "Exito", message: "Usuario Creado con exito", delegate: self, cancelButtonTitle: "OK")
                         alert.show()
-                        self.performSegueWithIdentifier("tarjetaSegueDos", sender: self);
+                        self.performSegue(withIdentifier: "tarjetaSegueDos", sender: self);
                     }
                 })
                 }

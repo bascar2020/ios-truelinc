@@ -17,8 +17,8 @@ class customSegueLogOut: UIStoryboardSegue {
 
         PFUser.logOut()
         
-        let VCOrigen = self.sourceViewController as UIViewController
-        let VCDestination = self.destinationViewController as UIViewController
+        let VCOrigen = self.source as UIViewController
+        let VCDestination = self.destination as UIViewController
         
         VCOrigen.navigationController!.pushViewController(VCDestination, animated:false)
         
