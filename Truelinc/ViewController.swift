@@ -19,63 +19,103 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+//        if  PFUser.currentUser() != nil {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewControllerWithIdentifier("inicioViewControler") as! SWRevealViewController
+//            self.presentViewController(vc, animated: true, completion: nil)
+//        }
+        
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if(PFUser.currentUser() == nil){
-        //    self.logIngViewController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.SignUpButton | PFLogInFields.PasswordForgotten | PFLogInFields.DismissButton
+        if(PFUser.current() == nil){
+        
             
-            var logInlogoTitle = UILabel()
+           self.logIngViewController.fields = [.usernameAndPassword, .logInButton, .signUpButton, .passwordForgotten, .dismissButton]
+            
+            let logInlogoTitle = UILabel()
             logInlogoTitle.text = "Truelinc"
             
-
+            self.logIngViewController.logInView?.logo = logInlogoTitle
+            self.logIngViewController.delegate = self
             
+            let signUpLogoTitle = UILabel()
+            signUpLogoTitle.text = "Truelinc";
+            self.singUpViewController.signUpView?.logo = signUpLogoTitle
+            self.singUpViewController.delegate = self
+            
+            self.logIngViewController.signUpController = self.singUpViewController   
         }
     }
 
     //MARK: Log in parse
     
-    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+    func log(_ logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
         
-        return true
+        if(!username.isEmpty || !password.isEmpty){
+            return true
+        }else{
+            return false
+        }
     }
     
-    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+    func log(_ logInController: PFLogInViewController, didLogIn user: PFUser) {
         
-    
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        
+    func log(_ logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        print("Failed Login")
     }
     
     //MARk:  Parse sign up
     
     
-    func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [String : String]) -> Bool {
-        
-                return true
+    func signUpViewController(_ signUpController: PFSignUpViewController, didFailToSignUpWithError error: Error?) {
+            print("failed sing up")
     }
     
-    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        
+    func signUpViewController(_ signUpController: PFSignUpViewController, didSignUp user: PFUser) {
+        self.dismiss(animated: true, completion:nil)
     }
     
-    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        
+    func signUpViewControllerDidCancelSignUp(_ signUpController: PFSignUpViewController) {
+        print("user dismssed sing up")
     }
     
-    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        
-    }
     
+    //MARK: Actions
+    
+//    @IBAction func loginAction (sender: AnyObject){
+//        self.presentViewController(self.logIngViewController, animated: true, completion: nil)
+//    }
+//    
+//    
+//    @IBAction func signupAction (sender: AnyObject){
+//        self.performSegueWithIdentifier("loginSegue", sender: self)
+//    }
+    
+    @IBAction func logoutAction (_ sender: AnyObject){
+        PFUser.logOut()
+    }
     
 }
 

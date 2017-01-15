@@ -1,0 +1,23 @@
+PODS:
+  - Bolts/Tasks (1.8.4)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - QRCodeReader.swift (7.2.0)
+
+DEPENDENCIES:
+  - Parse
+  - ParseUI
+  - QRCodeReader.swift (~> 7.2.0)
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
+
+PODFILE CHECKSUM: 606bdf2a37beeab7c014cee6bffd60b4bdb7a7c5
+
+COCOAPODS: 1.1.1
