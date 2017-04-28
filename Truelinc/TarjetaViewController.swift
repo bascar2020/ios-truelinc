@@ -11,6 +11,23 @@ import Parse
 
 class TarjetaViewController: UIViewController {
     
+    @IBOutlet var starButtons: [UIButton]!
+    
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+        let tag = sender.tag
+        for button in starButtons{
+            if button.tag >= tag{
+                //select
+                button.setTitle("★", for: .normal)
+            } else {
+                //not selected
+                button.setTitle("☆", for: .normal)
+            }
+        
+        }
+    
+    }
+    
     
     
     
