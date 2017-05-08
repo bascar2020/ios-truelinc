@@ -76,7 +76,7 @@ class TarjetaViewController: UIViewController {
                         self.img_qr.image = image
                     
                     }else{
-                        print("error",error)
+                        print("error",error!)
                     }
                 })
                 }else{
