@@ -58,6 +58,7 @@
 		CEBD18901C56E3EE0078476F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD188F1C56E3EE0078476F /* SWRevealViewController.m */; };
 		CEBD18921C56E5050078476F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD18911C56E5040078476F /* MenuViewController.swift */; };
 		CEBD18961C56F2910078476F /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD18951C56F2910078476F /* BackTableVC.swift */; };
+		E5058A941EB368630036A62F /* MiTarjetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5058A931EB368630036A62F /* MiTarjetaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		CEBD18911C56E5040078476F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CEBD18951C56F2910078476F /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 		DCF96DFA8847A9A5504AA019 /* Pods-Truelinc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truelinc.release.xcconfig"; path = "Pods/Target Support Files/Pods-Truelinc/Pods-Truelinc.release.xcconfig"; sourceTree = "<group>"; };
+		E5058A931EB368630036A62F /* MiTarjetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiTarjetaViewController.swift; sourceTree = "<group>"; };
 		FC5317F9D3B4291101C4C866 /* Pods-Truelinc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truelinc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Truelinc/Pods-Truelinc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +224,7 @@
 				62454CC81C47785000C79048 /* LaunchScreen.xib */,
 				62454CBD1C47785000C79048 /* Supporting Files */,
 				62AC32461C50A960000B9A2F /* SignupViewController.swift */,
+				E5058A931EB368630036A62F /* MiTarjetaViewController.swift */,
 				62AC32481C50A9EF000B9A2F /* LoginViewController.swift */,
 				62F8322E1C596DD4000EAD84 /* SingleTowCellTableViewCell.swift */,
 				62F832301C5A9F6E000EAD84 /* TarjetaViewController.swift */,
@@ -494,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5058A941EB368630036A62F /* MiTarjetaViewController.swift in Sources */,
 				62F832311C5A9F6E000EAD84 /* TarjetaViewController.swift in Sources */,
 				CE8A23BE1C58236A00B87F1F /* Camara.swift in Sources */,
 				62AC32491C50A9EF000B9A2F /* LoginViewController.swift in Sources */,
@@ -654,7 +658,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseUI",
 				);
 				INFOPLIST_FILE = Truelinc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.com.Indibyte.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -684,7 +688,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseUI",
 				);
 				INFOPLIST_FILE = Truelinc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.com.Indibyte.$(PRODUCT_NAME:rfc1034identifier)";
