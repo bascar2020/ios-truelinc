@@ -16,7 +16,7 @@ class BackTableVC: UITableViewController{
     
     
     override func viewDidLoad() {
-        TableArray = ["Mis Tarjetas","Buscador","Camara","Log Out"]    
+        TableArray = ["Mis Tarjetas","Mi Perfil","Buscador","Camara","Log Out"]
         self.tableMenu.tableFooterView = UIView(frame: CGRect.zero)
     }
     
@@ -39,7 +39,7 @@ class BackTableVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
                 //print(indexPath.row)
-                if (indexPath.row == 3){
+                if (indexPath.row == 4){
                     PFUser.logOut()
                     self.performSegue(withIdentifier: "segueLogOut", sender: self)
                     
