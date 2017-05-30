@@ -1809,7 +1809,7 @@
                         <viewControllerLayoutGuide type="bottom" id="udH-PP-b36"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I04-vU-9pH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="775"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6N-UL-qZx">
@@ -1949,7 +1949,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-dO-bUc">
-                                <rect key="frame" x="0.0" y="221" width="375" height="528"/>
+                                <rect key="frame" x="0.0" y="221" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eue-fn-09s">
                                         <rect key="frame" x="8" y="8" width="359" height="55"/>
@@ -1970,7 +1970,7 @@
                                                     <constraint firstAttribute="height" constant="44" id="xMX-MR-Ifo"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                <state key="normal" image="tweet"/>
+                                                <state key="normal" image="Tweet"/>
                                                 <state key="selected" image="www"/>
                                                 <connections>
                                                     <action selector="clickEventTwiter:" destination="IFB-Mc-WuU" eventType="touchUpInside" id="NL5-Ez-TGh"/>
@@ -2395,7 +2395,7 @@
                                     <constraint firstItem="oOT-OP-Ybk" firstAttribute="trailing" secondItem="S5N-Ed-EMt" secondAttribute="trailing" id="MkQ-3q-fkh"/>
                                     <constraint firstItem="CCs-Tv-ggn" firstAttribute="top" secondItem="TK2-kE-oYw" secondAttribute="bottom" constant="8" id="OIm-zM-oRU"/>
                                     <constraint firstItem="oOT-OP-Ybk" firstAttribute="top" secondItem="upL-oQ-3rz" secondAttribute="bottom" constant="8" id="Oe8-Rd-M2H"/>
-                                    <constraint firstItem="S5N-Ed-EMt" firstAttribute="bottom" secondItem="Rhs-dO-bUc" secondAttribute="bottomMargin" constant="8" id="Tay-fN-zgV"/>
+                                    <constraint firstItem="S5N-Ed-EMt" firstAttribute="bottom" secondItem="Rhs-dO-bUc" secondAttribute="bottomMargin" constant="-18" id="Tay-fN-zgV"/>
                                     <constraint firstItem="cvh-i8-yvw" firstAttribute="leading" secondItem="Z5L-dD-An5" secondAttribute="leading" id="U5a-Wq-ST1"/>
                                     <constraint firstItem="upL-oQ-3rz" firstAttribute="top" secondItem="fnW-1u-MYW" secondAttribute="bottom" constant="8" id="WE6-ur-7iY"/>
                                     <constraint firstItem="Eue-fn-09s" firstAttribute="leading" secondItem="cvh-i8-yvw" secondAttribute="leading" id="WKL-Rb-ILy"/>
@@ -2424,13 +2424,13 @@
                             <constraint firstItem="Rhs-dO-bUc" firstAttribute="leading" secondItem="R6N-UL-qZx" secondAttribute="leading" id="Hgn-zm-sNd"/>
                             <constraint firstItem="Rhs-dO-bUc" firstAttribute="top" secondItem="R6N-UL-qZx" secondAttribute="bottom" constant="1" id="Plt-QD-Lcv"/>
                             <constraint firstItem="R6N-UL-qZx" firstAttribute="leading" secondItem="I04-vU-9pH" secondAttribute="leading" id="RC7-nx-tUA"/>
-                            <constraint firstItem="Rhs-dO-bUc" firstAttribute="bottom" secondItem="udH-PP-b36" secondAttribute="top" constant="-51" id="c0Z-t6-hcP"/>
+                            <constraint firstItem="Rhs-dO-bUc" firstAttribute="bottom" secondItem="udH-PP-b36" secondAttribute="top" id="c0Z-t6-hcP"/>
                             <constraint firstAttribute="trailing" secondItem="R6N-UL-qZx" secondAttribute="trailing" id="mRg-JZ-JjC"/>
                             <constraint firstItem="R6N-UL-qZx" firstAttribute="top" secondItem="zm8-lT-6cx" secondAttribute="bottom" id="ycC-nZ-OJm"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="775"/>
                     <connections>
                         <outlet property="Scroll" destination="Rhs-dO-bUc" id="oFe-mL-UME"/>
                         <outlet property="btnAddDelete" destination="1Tk-6y-41X" id="qWq-7K-IvD"/>
@@ -2463,7 +2463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7DQ-MG-T6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5100.9375" y="-1557.0422535211267"/>
+            <point key="canvasLocation" x="5100.9375" y="-1557.5704225352113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Im-Io-nZq">
@@ -2487,10 +2487,11 @@
     <resources>
         <image name="Camara.png" width="1653" height="635"/>
         <image name="Telefeno" width="21" height="21"/>
+        <image name="Tweet" width="44" height="44"/>
         <image name="cam" width="30" height="30"/>
         <image name="city.jpg" width="900" height="675"/>
         <image name="correo" width="21" height="21"/>
-        <image name="face" width="33" height="33"/>
+        <image name="face" width="44" height="44"/>
         <image name="hogar" width="21" height="21"/>
         <image name="logo_2.png" width="400" height="400"/>
         <image name="logolargo.png" width="500" height="138"/>
@@ -2502,8 +2503,7 @@
         <image name="mitarjeta" width="30" height="30"/>
         <image name="no_perfil.png" width="500" height="300"/>
         <image name="nologo.png" width="150" height="150"/>
-        <image name="tweet" width="33" height="33"/>
-        <image name="www" width="33" height="33"/>
+        <image name="www" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZEY-Dt-u5D"/>
