@@ -167,7 +167,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vC3-WP-XGM" userLabel="View1">
-                                <rect key="frame" x="-7" y="164" width="334" height="190"/>
+                                <rect key="frame" x="-7" y="140" width="334" height="190"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-ty-6m8">
                                         <rect key="frame" x="35" y="37" width="69" height="21"/>
@@ -285,7 +285,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-g4-kCD">
-                                <rect key="frame" x="-7.5" y="159" width="335" height="275"/>
+                                <rect key="frame" x="-7.5" y="135" width="335" height="275"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywz-5u-Hdr">
                                         <rect key="frame" x="214" y="237" width="86" height="30"/>
@@ -538,7 +538,7 @@
                                 <rect key="frame" x="0.0" y="93" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bAN-ia-5aR" id="yLP-uy-CQd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PnA-H3-Mx5">
@@ -571,7 +571,7 @@
                                 <rect key="frame" x="0.0" y="137" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LIo-pB-LCN" id="npS-XF-dLI">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ddg-0L-MD2">
@@ -602,7 +602,7 @@
                                 <rect key="frame" x="0.0" y="181" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8o-TO-3kE" id="hlc-fk-vFa">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qvn-t6-VTX">
@@ -633,7 +633,7 @@
                                 <rect key="frame" x="0.0" y="225" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LU5-Is-u9v" id="Xje-p3-F7C">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B2d-z0-KfO">
@@ -664,7 +664,7 @@
                                 <rect key="frame" x="0.0" y="269" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fiy-P1-D6r" id="1Ke-kt-2po">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Xb-ac-E5r">
@@ -816,7 +816,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQi-7K-5EO">
                                                 <rect key="frame" x="0.0" y="0.0" width="142" height="125"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cambiar tu foto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-9m-RWc">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cambiar tu Foto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-9m-RWc">
                                                         <rect key="frame" x="8" y="22" width="134" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -848,7 +848,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Razon social si es compañia)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7L-TN-Sf3">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Escribe el nombre de contacto)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7L-TN-Sf3">
                                                         <rect key="frame" x="0.0" y="20" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="4fj-IZ-dos"/>
@@ -864,7 +864,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="2E7-Rh-uqC"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Producto o servicio principal)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Mh-40-xRO">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Nombre razon social )" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Mh-40-xRO">
                                                         <rect key="frame" x="0.0" y="57" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="lMX-un-sNs"/>
@@ -886,7 +886,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compañia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT5-qa-XP5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empresa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT5-qa-XP5">
                                                         <rect key="frame" x="0.0" y="43" width="256" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="GBp-fm-PPv"/>
@@ -895,7 +895,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Eslogan si es compañia)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-vI-diI">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Escribe el cargo)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-vI-diI">
                                                         <rect key="frame" x="0.0" y="97" width="264" height="14"/>
                                                         <color key="textColor" red="0.49799346919999998" green="0.49806851149999998" blue="0.49797707800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -954,8 +954,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-Qz-zfm">
                                                 <rect key="frame" x="2" y="0.0" width="140" height="128"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cambiar tu foto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB3-pK-Kv7">
-                                                        <rect key="frame" x="20" y="8" width="107" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cambiar tu Logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB3-pK-Kv7">
+                                                        <rect key="frame" x="17" y="8" width="114" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -995,7 +995,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Razon social si es compañia)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-dJ-hkN">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Escribe tu numero contacto)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-dJ-hkN">
                                                         <rect key="frame" x="0.0" y="20" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="vvK-IL-f8W"/>
@@ -1225,8 +1225,8 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe tu facebook" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irH-9F-rmL">
-                                                        <rect key="frame" x="8" y="22" width="398" height="16"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="URL de tu facebook" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irH-9F-rmL">
+                                                        <rect key="frame" x="8" y="22" width="398" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1253,8 +1253,8 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe tu twitter" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-4z-4yz">
-                                                        <rect key="frame" x="8" y="22" width="398" height="16"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="URL de  tu twitter" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-4z-4yz">
+                                                        <rect key="frame" x="8" y="22" width="398" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1281,8 +1281,8 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe tu pagina web" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIo-Le-fAY">
-                                                        <rect key="frame" x="8" y="22" width="406" height="16"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="URL de tu pagina web" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIo-Le-fAY">
+                                                        <rect key="frame" x="8" y="22" width="406" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1390,7 +1390,22 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="775"/>
                     <connections>
-                        <outlet property="Abrir" destination="APA-FF-r8w" id="84Q-lc-2My"/>
+                        <outlet property="abrir" destination="APA-FF-r8w" id="Bux-i4-IQ2"/>
+                        <outlet property="tv_cargo" destination="Zcx-vI-diI" id="Ce9-n2-nhT"/>
+                        <outlet property="tv_ciudad" destination="eFq-k8-Ava" id="jeo-lD-YCf"/>
+                        <outlet property="tv_direccion" destination="wKY-dj-PRL" id="Y00-vc-J1k"/>
+                        <outlet property="tv_email" destination="tT6-TA-2Yq" id="VyE-Wa-QpM"/>
+                        <outlet property="tv_empresa" destination="9Mh-40-xRO" id="qYT-gb-iGB"/>
+                        <outlet property="tv_nombre" destination="v7L-TN-Sf3" id="gsR-Cj-QFc"/>
+                        <outlet property="tv_telefono" destination="XLO-dJ-hkN" id="xcX-iX-Jr2"/>
+                        <outlet property="tv_tweet" destination="udd-Iw-5a3" id="Nx3-QV-Ynu"/>
+                        <outlet property="tv_urlFacebook" destination="irH-9F-rmL" id="LgB-BW-isB"/>
+                        <outlet property="tv_urlPaginaWeb" destination="VIo-Le-fAY" id="1yb-3y-zpE"/>
+                        <outlet property="tv_urlTwitter" destination="C0z-4z-4yz" id="Ac3-Qf-SzW"/>
+                        <outlet property="tweet" destination="udd-Iw-5a3" id="4OB-jO-k2b"/>
+                        <outlet property="urlFacebook" destination="wCI-3k-51e" id="LLc-m9-nUH"/>
+                        <outlet property="urlPaginaweb" destination="8xy-28-3t9" id="whZ-Gc-WH7"/>
+                        <outlet property="urlTwitter" destination="wRI-ta-Ntj" id="vFC-Nu-aUo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba1-W4-tQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1438,7 +1453,7 @@
                                         <rect key="frame" x="0.0" y="72" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tYA-vs-YLL" id="RfH-7J-ya0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_perfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="AAV-bd-Wbh">
@@ -2505,9 +2520,9 @@
         <image name="www" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZEY-Dt-u5D"/>
-        <segue reference="n8s-S9-REK"/>
         <segue reference="FQZ-zI-gUK"/>
-        <segue reference="gTs-Z4-Fby"/>
+        <segue reference="n8s-S9-REK"/>
+        <segue reference="ZEY-Dt-u5D"/>
+        <segue reference="YoD-QR-6Sk"/>
     </inferredMetricsTieBreakers>
 </document>

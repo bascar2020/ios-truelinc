@@ -7,10 +7,25 @@
 //
 
 import UIKit
+import Parse
 
 class MiTarjetaViewController: UIViewController {
 
     @IBOutlet weak var abrir: UIBarButtonItem!
+
+    @IBOutlet weak var tv_direccion: UITextField!
+    @IBOutlet weak var tv_ciudad: UITextField!
+    @IBOutlet weak var tv_urlFacebook: UITextField!
+    @IBOutlet weak var tv_urlTwitter: UITextField!
+    @IBOutlet weak var tv_urlPaginaWeb: UITextField!
+    @IBOutlet weak var tv_tweet: UITextField!
+    @IBOutlet weak var tv_email: UITextField!
+    @IBOutlet weak var tv_telefono: UITextField!
+    @IBOutlet weak var tv_cargo: UITextField!
+    @IBOutlet weak var tv_empresa: UITextField!
+    @IBOutlet weak var tv_nombre: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,13 +39,66 @@ class MiTarjetaViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let query = PFQuery(className:"Tarjetas")
+        let tarjetaId:String = PFUser.current()?.object(forKey: "mi_tarjeta") as! String;
+        
+        if(!tarjetaId.isEmpty){
+            
+            query.getObjectInBackground(withId: tarjetaId) { (tarjeta:PFObject!, error) in
+                if error == nil{
+                   
+                    if (tarjeta.object(forKey: "Nombre") != nil ){
+                        self.tv_nombre.text = (tarjeta.object(forKey: "Nombre") as AnyObject).capitalized}
+                    else{self.tv_nombre.text = ""}
+                    
+                    if (tarjeta.object(forKey: "Email") != nil ){
+                        self.tv_email.text = tarjeta.object(forKey: "Email") as! String}
+                    else{self.tv_email.text = ""}
+                    
+                    if (tarjeta.object(forKey: "Empresa") != nil ){
+                        self.tv_empresa.text = ((tarjeta.object(forKey: "Empresa") as AnyObject).capitalized)}
+                    else{self.tv_empresa.text = ""}
+                    
+                    if (tarjeta.object(forKey: "Cargo") != nil ){
+                        self.tv_cargo.text = (tarjeta.object(forKey: "Cargo") as AnyObject).capitalized}
+                    else{self.tv_cargo.text = ""}
+                    
+                    if (tarjeta.object(forKey: "Telefono") != nil ){
+                        self.tv_telefono.text = tarjeta.object(forKey: "Telefono") as! String}
+                    else{self.tv_telefono.text = ""}
+                    
+                    if (tarjeta.object(forKey: "Twit") != nil ){
+                        self.tv_tweet.text = tarjeta.object(forKey: "Twit") as! String}
+                    else{self.tv_tweet.text = ""}
+                    
+                    if (tarjeta.object(forKey: "Direccion") != nil ){
+                        self.tv_direccion.text = tarjeta.object(forKey: "Direccion") as? String}
+                    else{self.tv_direccion.text = ""}
+
+                    if (tarjeta.object(forKey: "Ciudad") != nil ){
+                        self.tv_ciudad.text = (tarjeta.object(forKey: "Ciudad") as AnyObject).capitalized}
+                    else{self.tv_ciudad.text = ""}
+
+                    
+                    
+                    
+                }else{
+                    let alert = UIAlertController(title: "Alert", message: "error al traer mi tarjeta", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "click", style: UIAlertActionStyle.default, handler: nil))
+                   // self.presentedViewController(alert, animated:true,completion:nil)
+                }
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
