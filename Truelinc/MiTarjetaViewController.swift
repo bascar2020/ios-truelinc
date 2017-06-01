@@ -10,9 +10,9 @@ import UIKit
 import Parse
 
 class MiTarjetaViewController: UIViewController {
-
+    
     @IBOutlet weak var abrir: UIBarButtonItem!
-
+    
     @IBOutlet weak var tv_direccion: UITextField!
     @IBOutlet weak var tv_ciudad: UITextField!
     @IBOutlet weak var tv_urlFacebook: UITextField!
@@ -36,19 +36,26 @@ class MiTarjetaViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let query = PFQuery(className:"Tarjetas")
-        let tarjetaId:String = PFUser.current()?.object(forKey: "mi_tarjeta") as! String;
         
-        if(!tarjetaId.isEmpty){
+        let user:PFUser = PFUser.current()!
+        
+        
+        
+        if((user.object(forKey: "mi_tarjeta")) != nil){
             
-            query.getObjectInBackground(withId: tarjetaId) { (tarjeta:PFObject!, error) in
-                if error == nil{
-                   
+            
+            
+            let query = PFUser.query()
+            query!.includeKey("mi_tarjeta")
+            query!.getObjectInBackground(withId: user.objectId!, block: { (objeto, error) in
+                if error == nil {
+                    let tarjeta = objeto?.object(forKey: "mi_tarjeta") as! PFObject
+                    
                     if (tarjeta.object(forKey: "Nombre") != nil ){
                         self.tv_nombre.text = (tarjeta.object(forKey: "Nombre") as AnyObject).capitalized}
                     else{self.tv_nombre.text = ""}
@@ -76,23 +83,36 @@ class MiTarjetaViewController: UIViewController {
                     if (tarjeta.object(forKey: "Direccion") != nil ){
                         self.tv_direccion.text = tarjeta.object(forKey: "Direccion") as? String}
                     else{self.tv_direccion.text = ""}
-
+                    
                     if (tarjeta.object(forKey: "Ciudad") != nil ){
                         self.tv_ciudad.text = (tarjeta.object(forKey: "Ciudad") as AnyObject).capitalized}
                     else{self.tv_ciudad.text = ""}
-
+                    
+                    if (tarjeta.object(forKey: "twiter") != nil ){
+                        self.tv_urlTwitter.text = tarjeta.object(forKey: "twiter") as! String}
+                    else{self.tv_urlTwitter.text = ""}
+                    
+                    if (tarjeta.object(forKey: "facebook") != nil ){
+                        self.tv_urlFacebook.text = tarjeta.object(forKey: "facebook") as! String}
+                    else{self.tv_urlFacebook.text = ""}
+                    
+                    if (tarjeta.object(forKey: "www") != nil ){
+                        self.tv_urlPaginaWeb.text = tarjeta.object(forKey: "www") as! String}
+                    else{self.tv_urlPaginaWeb.text = ""}
+                    
                     
                     
                     
                 }else{
                     let alert = UIAlertController(title: "Alert", message: "error al traer mi tarjeta", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "click", style: UIAlertActionStyle.default, handler: nil))
-                   // self.presentedViewController(alert, animated:true,completion:nil)
+                    // self.presentedViewController(alert, animated:true,completion:nil)
                 }
-            }
+            })
+            
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,13 +120,13 @@ class MiTarjetaViewController: UIViewController {
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

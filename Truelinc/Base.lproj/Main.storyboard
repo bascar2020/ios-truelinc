@@ -538,7 +538,7 @@
                                 <rect key="frame" x="0.0" y="93" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bAN-ia-5aR" id="yLP-uy-CQd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PnA-H3-Mx5">
@@ -567,7 +567,7 @@
                                     <segue destination="g78-fZ-nTB" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="FQZ-zI-gUK"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Mi Perfil" textLabel="Ddg-0L-MD2" detailTextLabel="wFY-5A-leO" imageView="7F6-87-r6D" style="IBUITableViewCellStyleValue1" id="LIo-pB-LCN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Mi Perfil" textLabel="Ddg-0L-MD2" detailTextLabel="wFY-5A-leO" style="IBUITableViewCellStyleValue1" id="LIo-pB-LCN">
                                 <rect key="frame" x="0.0" y="137" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LIo-pB-LCN" id="npS-XF-dLI">
@@ -575,7 +575,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ddg-0L-MD2">
-                                            <rect key="frame" x="60" y="12" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -588,10 +588,6 @@
                                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="mitarjeta" id="7F6-87-r6D">
-                                            <rect key="frame" x="15" y="6" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -602,7 +598,7 @@
                                 <rect key="frame" x="0.0" y="181" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8o-TO-3kE" id="hlc-fk-vFa">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qvn-t6-VTX">
@@ -633,7 +629,7 @@
                                 <rect key="frame" x="0.0" y="225" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LU5-Is-u9v" id="Xje-p3-F7C">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B2d-z0-KfO">
@@ -664,7 +660,7 @@
                                 <rect key="frame" x="0.0" y="269" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fiy-P1-D6r" id="1Ke-kt-2po">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Xb-ac-E5r">
@@ -1402,10 +1398,6 @@
                         <outlet property="tv_urlFacebook" destination="irH-9F-rmL" id="LgB-BW-isB"/>
                         <outlet property="tv_urlPaginaWeb" destination="VIo-Le-fAY" id="1yb-3y-zpE"/>
                         <outlet property="tv_urlTwitter" destination="C0z-4z-4yz" id="Ac3-Qf-SzW"/>
-                        <outlet property="tweet" destination="udd-Iw-5a3" id="4OB-jO-k2b"/>
-                        <outlet property="urlFacebook" destination="wCI-3k-51e" id="LLc-m9-nUH"/>
-                        <outlet property="urlPaginaweb" destination="8xy-28-3t9" id="whZ-Gc-WH7"/>
-                        <outlet property="urlTwitter" destination="wRI-ta-Ntj" id="vFC-Nu-aUo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba1-W4-tQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2514,7 +2506,6 @@
         <image name="lupa" width="30" height="30"/>
         <image name="menu" width="24" height="24"/>
         <image name="mist" width="30" height="30"/>
-        <image name="mitarjeta" width="30" height="30"/>
         <image name="no_perfil.png" width="500" height="300"/>
         <image name="nologo.png" width="150" height="150"/>
         <image name="www" width="44" height="44"/>
