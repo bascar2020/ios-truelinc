@@ -848,7 +848,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Escribe el nombre de contacto)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7L-TN-Sf3">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Escribe el nombre de contacto)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7L-TN-Sf3">
                                                         <rect key="frame" x="0.0" y="20" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="4fj-IZ-dos"/>
@@ -864,7 +864,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="2E7-Rh-uqC"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Nombre razon social )" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Mh-40-xRO">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Nombre razon social )" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Mh-40-xRO">
                                                         <rect key="frame" x="0.0" y="57" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="lMX-un-sNs"/>
@@ -895,7 +895,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Escribe el cargo)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-vI-diI">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Escribe el cargo)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-vI-diI">
                                                         <rect key="frame" x="0.0" y="97" width="264" height="14"/>
                                                         <color key="textColor" red="0.49799346919999998" green="0.49806851149999998" blue="0.49797707800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -995,7 +995,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Escribe tu numero contacto)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-dJ-hkN">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Escribe tu numero contacto)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-dJ-hkN">
                                                         <rect key="frame" x="0.0" y="20" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="vvK-IL-f8W"/>
@@ -1011,7 +1011,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="xl4-dp-Jix"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Producto o servicio principal)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tT6-TA-2Yq">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Producto o servicio principal)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tT6-TA-2Yq">
                                                         <rect key="frame" x="0.0" y="57" width="264" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="ZdU-VZ-NNF"/>
@@ -1027,7 +1027,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="Jea-j7-IKw"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Eslogan si es compañia)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fk2-7y-blD">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(Eslogan si es compañia)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fk2-7y-blD">
                                                         <rect key="frame" x="0.0" y="96" width="264" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="mks-Ns-35c"/>
@@ -1109,7 +1109,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe tu tweet o comentario aqui" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udd-Iw-5a3">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe tu tweet o comentario aqui" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udd-Iw-5a3">
                                                 <rect key="frame" x="8" y="37" width="398" height="82"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="82" id="ABR-IE-oTJ"/>
@@ -1169,7 +1169,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe tu dirección" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKY-dj-PRL">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe tu dirección" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKY-dj-PRL">
                                                         <rect key="frame" x="8" y="22" width="398" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1197,7 +1197,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Escribe tu ciudad" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFq-k8-Ava">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe tu ciudad" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFq-k8-Ava">
                                                         <rect key="frame" x="8" y="22" width="398" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1225,7 +1225,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="URL de tu facebook" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irH-9F-rmL">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="URL de tu facebook" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irH-9F-rmL">
                                                         <rect key="frame" x="8" y="22" width="398" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1253,7 +1253,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="URL de  tu twitter" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-4z-4yz">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="URL de  tu twitter" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-4z-4yz">
                                                         <rect key="frame" x="8" y="22" width="398" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1281,7 +1281,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.79607843140000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="URL de tu pagina web" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIo-Le-fAY">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="URL de tu pagina web" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIo-Le-fAY">
                                                         <rect key="frame" x="8" y="22" width="406" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="textColor" red="0.50583600997924805" green="0.50591212511062622" blue="0.50581938028335571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
