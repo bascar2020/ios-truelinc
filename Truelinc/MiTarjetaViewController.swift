@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MiTarjetaViewController: UIViewController {
+class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var abrir: UIBarButtonItem!
     
@@ -24,6 +24,8 @@ class MiTarjetaViewController: UIViewController {
     @IBOutlet weak var tv_cargo: UITextField!
     @IBOutlet weak var tv_empresa: UITextField!
     @IBOutlet weak var tv_nombre: UITextField!
+    @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     
     
     override func viewDidLoad() {
@@ -38,6 +40,14 @@ class MiTarjetaViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         // Do any additional setup after loading the view.
+        
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        foto.isUserInteractionEnabled = true
+        foto.addGestureRecognizer(tapGestureRecognizer)
+        
+        logo.isUserInteractionEnabled = true
+        logo.addGestureRecognizer(tapGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,14 +129,43 @@ class MiTarjetaViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        print(tappedImage)
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = .photoLibrary
+        
+        present(controller,animated: true, completion: nil)
+    }
     
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let selectImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            logo.contentMode = .scaleAspectFit
+            logo.image = selectImage
+        }
+        
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = .photoLibrary
+        
+        present(controller,animated: true, completion: nil)
+    }
 }

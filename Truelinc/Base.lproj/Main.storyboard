@@ -823,12 +823,10 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrF-wb-30z">
-                                                        <rect key="frame" x="8" y="50" width="134" height="67"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_perfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEc-Of-F7F">
+                                                        <rect key="frame" x="8" y="48" width="126" height="78"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" red="0.49799346923828125" green="0.49806851148605347" blue="0.49797707796096802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button" image="no_perfil.png"/>
-                                                    </button>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -961,12 +959,10 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rio-Wc-7LJ">
-                                                        <rect key="frame" x="31" y="35" width="85" height="85"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kIa-H6-r2o">
+                                                        <rect key="frame" x="8" y="37" width="124" height="91"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" red="0.95453283629999996" green="0.95453283629999996" blue="0.95453283629999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button" image="nologo.png"/>
-                                                    </button>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1391,6 +1387,8 @@
                     <size key="freeformSize" width="414" height="775"/>
                     <connections>
                         <outlet property="abrir" destination="APA-FF-r8w" id="Bux-i4-IQ2"/>
+                        <outlet property="foto" destination="eEc-Of-F7F" id="f08-bL-MDk"/>
+                        <outlet property="logo" destination="kIa-H6-r2o" id="ddQ-eC-sfq"/>
                         <outlet property="tv_cargo" destination="Zcx-vI-diI" id="Ce9-n2-nhT"/>
                         <outlet property="tv_ciudad" destination="eFq-k8-Ava" id="jeo-lD-YCf"/>
                         <outlet property="tv_direccion" destination="wKY-dj-PRL" id="Y00-vc-J1k"/>
@@ -1406,7 +1404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba1-W4-tQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4508" y="872"/>
+            <point key="canvasLocation" x="4507.5" y="870.95070422535207"/>
         </scene>
         <!--Buscador-->
         <scene sceneID="sCw-Ro-Ipk">
