@@ -48,6 +48,10 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
         
         logo.isUserInteractionEnabled = true
         logo.addGestureRecognizer(tapGestureRecognizer)
+        
+        logo.layer.cornerRadius = logo.frame.size.width/2
+        logo.clipsToBounds = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
