@@ -18,6 +18,7 @@
 		62454CD61C47785100C79048 /* TruelincTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62454CD51C47785100C79048 /* TruelincTests.swift */; };
 		628327D21C6EFB230089B539 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628327D11C6EFB230089B539 /* Reachability.swift */; };
 		628327D41C6EFC390089B539 /* logoT.png in Resources */ = {isa = PBXBuildFile; fileRef = 628327D31C6EFC390089B539 /* logoT.png */; };
+		629CB4E71F43E2B3005272BB /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629CB4E61F43E2B3005272BB /* Cosmos.framework */; };
 		62AC32361C505BD1000B9A2F /* city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62AC32251C505BD1000B9A2F /* city.jpg */; };
 		62AC32381C505BD1000B9A2F /* franja.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AC32271C505BD1000B9A2F /* franja.png */; };
 		62AC323C1C505BD1000B9A2F /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AC322B1C505BD1000B9A2F /* icon_app.png */; };
@@ -40,6 +41,7 @@
 		62B59C521C4EA50000CF5028 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C511C4EA50000CF5028 /* libsqlite3.dylib */; };
 		62B59C531C4EA50A00CF5028 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4B1C4EA12000CF5028 /* libz.tbd */; };
 		62B59C541C4EA51300CF5028 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */; };
+		62DB5CC91F414E4400F758D1 /* WSTagsField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB5CC81F414E4400F758D1 /* WSTagsField.framework */; };
 		62EB72451E298E7A0068F656 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62EB72411E298E7A0068F656 /* Bolts.framework */; };
 		62EB72461E298E7A0068F656 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62EB72421E298E7A0068F656 /* Parse.framework */; };
 		62EB72471E298E7A0068F656 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62EB72431E298E7A0068F656 /* ParseUI.framework */; };
@@ -89,6 +91,7 @@
 		62454CD51C47785100C79048 /* TruelincTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruelincTests.swift; sourceTree = "<group>"; };
 		628327D11C6EFB230089B539 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		628327D31C6EFC390089B539 /* logoT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoT.png; path = drawable/logoT.png; sourceTree = "<group>"; };
+		629CB4E61F43E2B3005272BB /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cosmos.framework; path = "../../../Library/Developer/Xcode/DerivedData/Truelinc-bhwocrqsplmzjzaqbyujkahoveiv/Build/Products/Debug-iphonesimulator/Cosmos/Cosmos.framework"; sourceTree = "<group>"; };
 		62AC321D1C505AD0000B9A2F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		62AC321E1C505AD0000B9A2F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		62AC32211C505AFD000B9A2F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -115,6 +118,11 @@
 		62B59C4D1C4EA12C00CF5028 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		62B59C4F1C4EA4C200CF5028 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
 		62B59C511C4EA50000CF5028 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		62DB5CC01F40B51100F758D1 /* KSTokenView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSTokenView.framework; path = "Pods/../build/Debug-iphoneos/KSTokenView/KSTokenView.framework"; sourceTree = "<group>"; };
+		62DB5CC21F40CE2100F758D1 /* CLTokenInputView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CLTokenInputView.framework; path = "Pods/../build/Debug-iphoneos/CLTokenInputView/CLTokenInputView.framework"; sourceTree = "<group>"; };
+		62DB5CC31F40CE2200F758D1 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = "../../../Library/Developer/Xcode/DerivedData/Truelinc-bhwocrqsplmzjzaqbyujkahoveiv/Build/Products/Debug-iphonesimulator/Eureka/Eureka.framework"; sourceTree = "<group>"; };
+		62DB5CC41F40CE2200F758D1 /* TokenRow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TokenRow.framework; path = "../../../Library/Developer/Xcode/DerivedData/Truelinc-bhwocrqsplmzjzaqbyujkahoveiv/Build/Products/Debug-iphonesimulator/TokenRow/TokenRow.framework"; sourceTree = "<group>"; };
+		62DB5CC81F414E4400F758D1 /* WSTagsField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WSTagsField.framework; path = "../../../Library/Developer/Xcode/DerivedData/Truelinc-bhwocrqsplmzjzaqbyujkahoveiv/Build/Products/Debug-iphonesimulator/WSTagsField/WSTagsField.framework"; sourceTree = "<group>"; };
 		62EB723F1E298AEF0068F656 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = "Pods/../build/Debug-iphoneos/QRCodeReader.framework"; sourceTree = "<group>"; };
 		62EB72411E298E7A0068F656 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
 		62EB72421E298E7A0068F656 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse/Parse.framework"; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629CB4E71F43E2B3005272BB /* Cosmos.framework in Frameworks */,
+				62DB5CC91F414E4400F758D1 /* WSTagsField.framework in Frameworks */,
 				62EB72451E298E7A0068F656 /* Bolts.framework in Frameworks */,
 				62EB72461E298E7A0068F656 /* Parse.framework in Frameworks */,
 				62EB72471E298E7A0068F656 /* ParseUI.framework in Frameworks */,
@@ -317,6 +327,12 @@
 		C02899D2E690AB05D05DD6CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				629CB4E61F43E2B3005272BB /* Cosmos.framework */,
+				62DB5CC81F414E4400F758D1 /* WSTagsField.framework */,
+				62DB5CC21F40CE2100F758D1 /* CLTokenInputView.framework */,
+				62DB5CC31F40CE2200F758D1 /* Eureka.framework */,
+				62DB5CC41F40CE2200F758D1 /* TokenRow.framework */,
+				62DB5CC01F40B51100F758D1 /* KSTokenView.framework */,
 				62EB72411E298E7A0068F656 /* Bolts.framework */,
 				62EB72421E298E7A0068F656 /* Parse.framework */,
 				62EB72431E298E7A0068F656 /* ParseUI.framework */,
@@ -656,6 +672,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Parse",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseUI",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KSTokenView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CLTokenInputView",
 				);
 				INFOPLIST_FILE = Truelinc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -686,6 +704,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Parse",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseUI",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KSTokenView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CLTokenInputView",
 				);
 				INFOPLIST_FILE = Truelinc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

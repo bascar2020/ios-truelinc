@@ -9,6 +9,12 @@
 import Foundation
 import Parse
 
+enum selectorScope:Int {
+    case cerca = 0
+    case ciudad = 1
+    case pais = 2
+}
+
 class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, SWRevealViewControllerDelegate {
     
 
@@ -22,7 +28,7 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
     override func viewDidLoad() {
         
         self.tableTarjetas.tableFooterView = UIView(frame: CGRect.zero)
-        
+        self.searchBarSetup()
         let logo = UIImage(named: "logoT")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
@@ -41,6 +47,24 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
         }
         
     }
+    
+    func searchBarSetup(){
+        mySearchBar.showsScopeBar = true
+        mySearchBar.scopeButtonTitles = ["Cerca","Ciudad","Pais"]
+        
+        mySearchBar.delegate = self
+        self.tableTarjetas.tableHeaderView = mySearchBar
+    }
+    
+// MARK: - search bar delegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+     
+    }
+    
+    
+    
+    
     
     func revealController(_ revealController: SWRevealViewController!, willMoveTo position: FrontViewPosition)
     {

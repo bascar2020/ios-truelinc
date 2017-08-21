@@ -1,23 +1,45 @@
 PODS:
   - Bolts/Tasks (1.8.4)
+  - Cosmos (11.0.3)
+  - IQKeyboardManagerSwift (4.0.11)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
   - ParseUI (1.2.0):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
   - QRCodeReader.swift (7.2.0)
+  - SwiftValidator (4.0.0)
+  - WSTagsField (2.1.2)
 
 DEPENDENCIES:
+  - Cosmos (~> 11.0)
+  - IQKeyboardManagerSwift
   - Parse
   - ParseUI
   - QRCodeReader.swift (~> 7.2.0)
+  - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
+  - WSTagsField
+
+EXTERNAL SOURCES:
+  SwiftValidator:
+    :branch: master
+    :git: https://github.com/jpotts18/SwiftValidator.git
+
+CHECKOUT OPTIONS:
+  SwiftValidator:
+    :commit: 6cff6cac3e02a617f7cf11323e18526a117d5673
+    :git: https://github.com/jpotts18/SwiftValidator.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Cosmos: eb506859929f4add2d2aec822a27efb2f718a95d
+  IQKeyboardManagerSwift: 10f0a6b8ea2904c8943c0e1a116c99f5b8ad83af
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
+  SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
+  WSTagsField: 3abc2553b94cd5caeb7fe5ba5e4668772714bbe8
 
-PODFILE CHECKSUM: 606bdf2a37beeab7c014cee6bffd60b4bdb7a7c5
+PODFILE CHECKSUM: 94b45d6605c4103657c7efc2c2a7111687ee4608
 
 COCOAPODS: 1.2.1

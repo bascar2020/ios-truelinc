@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.initialize(with: configuration)
 
+        //keyboard manager
+        IQKeyboardManager.sharedManager().enable = true
+        
         return true
     }
 

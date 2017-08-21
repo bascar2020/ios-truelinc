@@ -8,27 +8,12 @@
 
 import UIKit
 import Parse
+import Cosmos
 
 class TarjetaViewController: UIViewController {
     
-    @IBOutlet var starButtons: [UIButton]!
     
-    @IBAction func startButtonTapped(_ sender: UIButton) {
-        let tag = sender.tag
-        for button in starButtons{
-            if button.tag >= tag{
-                //select
-                button.setTitle("★", for: .normal)
-            } else {
-                //not selected
-                button.setTitle("☆", for: .normal)
-            }
-        
-        }
-    
-    }
-    
-    
+    @IBOutlet weak var starBtn: CosmosView!
     
     
     @IBOutlet weak var Scroll: UIScrollView!
@@ -150,6 +135,22 @@ class TarjetaViewController: UIViewController {
             else{self.deleteContraintWWW()}
             
             
+            if(viaSegueTarjeta.object(forKey: "generalRate") != nil){
+                starBtn.rating = viaSegueTarjeta.object(forKey: "generalRate") as! Double
+            }
+            
+            
+            
+            starBtn.didFinishTouchingCosmos = { rating in
+//             print("touching \(rating)")
+            self.viaSegueTarjeta.setObject(rating, forKey: "generalRate")
+            PFCloud.callFunction(inBackground: "rate", withParameters: ["usuario":PFUser.current()?.objectId,"tarjeta":self.viaSegueTarjeta.objectId,"rate":rating])
+            
+        }
+            
+//            starBtn.didTouchCosmos = { rating in
+//                print("didtouch \(rating)")
+//            }
             
         }
         
