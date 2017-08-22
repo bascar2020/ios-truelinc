@@ -60,6 +60,7 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
         // Do any additional setup after loading the view.
         
         
+        
         let tapGestureRecognizerFOTO = UITapGestureRecognizer(target: self, action: #selector(imageTappedFOTO(tapGestureRecognizer:)))
         let tapGestureRecognizerLOGO = UITapGestureRecognizer(target: self, action: #selector(imageTappedLOGO(tapGestureRecognizer:)))
         
@@ -93,10 +94,15 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
         //validar las tarjetas
         validator.registerField(self.tv_email, rules: [RequiredRule(),EmailRule(message: "correo no valido")])
         validator.registerField(self.tv_telefono, rules: [RequiredRule(), MinLengthRule(length: 10)])
+        validator.registerField(self.tv_nombre, rules: [RequiredRule()])
+        validator.registerField(self.tv_empresa, rules: [RequiredRule()])
+        validator.registerField(self.tv_cargo, rules: [RequiredRule()])
+        validator.registerField(self.tv_ciudad, rules: [RequiredRule()])
+        validator.registerField(self.tv_urlFacebook, rules: [URLRule()])
+    
         
-        
-        //obtener ubicacion
-        glGetErrortionManager()
+        // cargar ino tarjeta
+        loadInfoTarjeta()
         
         
     }
@@ -107,104 +113,6 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         
-        let user:PFUser = PFUser.current()!
-        
-        
-        
-        if((user.object(forKey: "mi_tarjeta")) != nil){
-            
-            
-            
-            let query = PFUser.query()
-            query!.includeKey("mi_tarjeta")
-            query!.getObjectInBackground(withId: user.objectId!, block: { (objeto, error) in
-                if error == nil {
-                    self.tarjeta = objeto?.object(forKey: "mi_tarjeta") as! PFObject
-                    
-                    if (self.tarjeta?.object(forKey: "Nombre") != nil ){
-                        self.tv_nombre.text = (self.tarjeta?.object(forKey: "Nombre") as AnyObject).capitalized}
-                    else{self.tv_nombre.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Email") != nil ){
-                        self.tv_email.text = self.tarjeta?.object(forKey: "Email") as? String}
-                    else{self.tv_email.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Empresa") != nil ){
-                        self.tv_empresa.text = ((self.tarjeta?.object(forKey: "Empresa") as AnyObject).capitalized)}
-                    else{self.tv_empresa.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Cargo") != nil ){
-                        self.tv_cargo.text = (self.tarjeta?.object(forKey: "Cargo") as AnyObject).capitalized}
-                    else{self.tv_cargo.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Telefono") != nil ){
-                        self.tv_telefono.text = self.tarjeta?.object(forKey: "Telefono") as? String}
-                    else{self.tv_telefono.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Twit") != nil ){
-                        self.tv_tweet.text = self.tarjeta?.object(forKey: "Twit") as? String}
-                    else{self.tv_tweet.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Direccion") != nil ){
-                        self.tv_direccion.text = self.tarjeta?.object(forKey: "Direccion") as? String}
-                    else{self.tv_direccion.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "Ciudad") != nil ){
-                        self.tv_ciudad.text = (self.tarjeta?.object(forKey: "Ciudad") as AnyObject).capitalized}
-                    else{self.tv_ciudad.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "twiter") != nil ){
-                        self.tv_urlTwitter.text = self.tarjeta?.object(forKey: "twiter") as? String}
-                    else{self.tv_urlTwitter.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "facebook") != nil ){
-                        self.tv_urlFacebook.text = self.tarjeta?.object(forKey: "facebook") as? String}
-                    else{self.tv_urlFacebook.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "www") != nil ){
-                        self.tv_urlPaginaWeb.text = self.tarjeta?.object(forKey: "www") as? String}
-                    else{self.tv_urlPaginaWeb.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "tags") != nil ){
-                        self.tarjeta?.mutableArrayValue(forKey: "tags").forEach({ (tag) in
-                            self.tagsField.addTag((tag as? String)!)
-                        })}
-                    else{self.tv_urlPaginaWeb.text = ""}
-                    
-                    if (self.tarjeta?.object(forKey: "LogoEmpresa") != nil ){
-                        
-                        (self.tarjeta?.object(forKey: "LogoEmpresa") as AnyObject).getDataInBackground(block: { (imageData: Data?, error) in
-                            if error == nil {
-                                let image = UIImage(data: imageData!)
-                                self.logo.image = image
-                            }else{
-                                print("error",error!)
-                            }
-                        })
-                    }
-
-                    if (self.tarjeta?.object(forKey: "Foto") != nil ){
-                        
-                        (self.tarjeta?.object(forKey: "Foto") as AnyObject).getDataInBackground(block: { (imageData: Data?, error) in
-                            if error == nil {
-                                let image = UIImage(data: imageData!)
-                                self.foto.image = image
-                            }else{
-                                print("error",error!)
-                            }
-                        })
-                    }
-
-                    
-                    
-                }else{
-                    let alert = UIAlertController(title: "Alert", message: "error al traer tarjeta", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "click", style: UIAlertActionStyle.default, handler: nil))
-                    // self.presentedViewController(alert, animated:true,completion:nil)
-                }
-            })
-            
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -251,12 +159,12 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
             }
         }
         
-        dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
         
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     
@@ -297,7 +205,13 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
             self.tarjeta?.setValue(self.tv_urlTwitter.text, forKey: "twiter")
             self.tarjeta?.setValue(self.tv_urlFacebook.text, forKey: "facebook")
             self.tarjeta?.setValue(self.tv_urlPaginaWeb.text, forKey: "www")
+            self.tarjeta?.setValue(PFGeoPoint(location: self.geopoint), forKey: "GeoPoint")
             
+            var tagsarr = [String]()
+            self.tagsField.tags.forEach({ (tag) in
+                tagsarr.append(tag.text)
+            })
+            self.tarjeta?.setValue(tagsarr ,forKey: "tags")
             
         
             
@@ -380,9 +294,133 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
             
             self.previusAddress = address
             self.geopoint = loc.location
+            
         })
     }
 
+    func loadInfoTarjeta(){
+        let user:PFUser = PFUser.current()!
+        
+        
+        
+        if((user.object(forKey: "mi_tarjeta")) != nil){
+            
+            
+            
+            let query = PFUser.query()
+            query!.includeKey("mi_tarjeta")
+            query!.getObjectInBackground(withId: user.objectId!, block: { (objeto, error) in
+                if error == nil {
+                    self.tarjeta = objeto?.object(forKey: "mi_tarjeta") as! PFObject
+                    
+                    if (self.tarjeta?.object(forKey: "Nombre") != nil ){
+                        self.tv_nombre.text = (self.tarjeta?.object(forKey: "Nombre") as AnyObject).capitalized}
+                    else{self.tv_nombre.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Email") != nil ){
+                        self.tv_email.text = self.tarjeta?.object(forKey: "Email") as? String}
+                    else{self.tv_email.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Empresa") != nil ){
+                        self.tv_empresa.text = ((self.tarjeta?.object(forKey: "Empresa") as AnyObject).capitalized)}
+                    else{self.tv_empresa.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Cargo") != nil ){
+                        self.tv_cargo.text = (self.tarjeta?.object(forKey: "Cargo") as AnyObject).capitalized}
+                    else{self.tv_cargo.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Telefono") != nil ){
+                        self.tv_telefono.text = self.tarjeta?.object(forKey: "Telefono") as? String}
+                    else{self.tv_telefono.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Twit") != nil ){
+                        self.tv_tweet.text = self.tarjeta?.object(forKey: "Twit") as? String}
+                    else{self.tv_tweet.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Direccion") != nil ){
+                        self.tv_direccion.text = self.tarjeta?.object(forKey: "Direccion") as? String}
+                    else{self.tv_direccion.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "Ciudad") != nil ){
+                        self.tv_ciudad.text = (self.tarjeta?.object(forKey: "Ciudad") as AnyObject).capitalized}
+                    else{self.tv_ciudad.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "twiter") != nil ){
+                        self.tv_urlTwitter.text = self.tarjeta?.object(forKey: "twiter") as? String}
+                    else{self.tv_urlTwitter.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "facebook") != nil ){
+                        self.tv_urlFacebook.text = self.tarjeta?.object(forKey: "facebook") as? String}
+                    else{self.tv_urlFacebook.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "www") != nil ){
+                        self.tv_urlPaginaWeb.text = self.tarjeta?.object(forKey: "www") as? String}
+                    else{self.tv_urlPaginaWeb.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "tags") != nil ){
+                        self.tarjeta?.mutableArrayValue(forKey: "tags").forEach({ (tag) in
+                            self.tagsField.addTag((tag as? String)!)
+                        })}
+                    else{self.tv_urlPaginaWeb.text = ""}
+                    
+                    if (self.tarjeta?.object(forKey: "LogoEmpresa") != nil ){
+                        
+                        (self.tarjeta?.object(forKey: "LogoEmpresa") as AnyObject).getDataInBackground(block: { (imageData: Data?, error) in
+                            if error == nil {
+                                let image = UIImage(data: imageData!)
+                                self.logo.image = image
+                            }else{
+                                print("error",error!)
+                            }
+                        })
+                    }
+                    
+                    if (self.tarjeta?.object(forKey: "Foto") != nil ){
+                        
+                        (self.tarjeta?.object(forKey: "Foto") as AnyObject).getDataInBackground(block: { (imageData: Data?, error) in
+                            if error == nil {
+                                let image = UIImage(data: imageData!)
+                                self.foto.image = image
+                            }else{
+                                print("error",error!)
+                            }
+                        })
+                    }
+                    
+                    if (self.tarjeta?.object(forKey: "GeoPoint") != nil ){
+                        let address = self.tarjeta?.object(forKey: "GeoPoint") as? PFGeoPoint
+                        
+                        self.geopoint = CLLocation(latitude: (address?.latitude)!, longitude: (address?.longitude)!)
+                        self.mapView.centerCoordinate = self.geopoint.coordinate
+                        let reg = MKCoordinateRegionMakeWithDistance(self.geopoint.coordinate, 500, 500)
+                        self.mapView.setRegion(reg, animated: true)
+                        
+                        self.locationManager = CLLocationManager()
+                        self.locationManager.delegate = self
+                        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                        self.geoCoder = CLGeocoder()
+                        self.mapView.delegate = self
+                        
+                        
+                        
+                        
+                    }else{
+                        //obtener ubicacion actual
+                        self.glGetErrortionManager()
+                    }
+                    
+                    
+                    
+                }else{
+                    let alert = UIAlertController(title: "Alert", message: "error al traer tarjeta", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "click", style: UIAlertActionStyle.default, handler: nil))
+                    // self.presentedViewController(alert, animated:true,completion:nil)
+                }
+            })
+            
+        }
+
+    }
     
 }
 
@@ -419,5 +457,13 @@ extension MiTarjetaViewController {
         tagsField.onDidUnselectTagView = { _, tagView in
 //            print("Unselect \(tagView)")
         }
+    }
+}
+
+class URLRule: RegexRule {
+    
+    static let regex = "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)"
+    convenience init(message : String = "Not a valid URL"){
+        self.init(regex: URLRule.regex, message : message)
     }
 }

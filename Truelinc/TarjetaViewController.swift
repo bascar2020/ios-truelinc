@@ -32,6 +32,7 @@ class TarjetaViewController: UIViewController {
     @IBOutlet weak var btn_tw: UIButton!
     @IBOutlet weak var btn_www: UIButton!
     @IBOutlet weak var btnAddDelete: UIButton!
+    @IBOutlet weak var btn_mapa: UIButton!
     
     
     @IBOutlet weak var constraintDtw: NSLayoutConstraint!
@@ -53,6 +54,7 @@ class TarjetaViewController: UIViewController {
     var linkWWW = ""
     var tarjetaesmia: Bool = false
     var objectId = ""
+    var geoPoint = PFGeoPoint()
     
     var viaSegueFoto = UIImage()
     var viaSegueLogo = UIImage()
@@ -139,18 +141,19 @@ class TarjetaViewController: UIViewController {
                 starBtn.rating = viaSegueTarjeta.object(forKey: "generalRate") as! Double
             }
             
+            if (viaSegueTarjeta.object(forKey: "GeoPoint") != nil ){
+                self.geoPoint  = viaSegueTarjeta.object(forKey: "GeoPoint") as! PFGeoPoint
+            }
+            else{self.btn_mapa.isHidden = true}
             
-            
+            starBtn.settings.fillMode = .precise
             starBtn.didFinishTouchingCosmos = { rating in
 //             print("touching \(rating)")
             self.viaSegueTarjeta.setObject(rating, forKey: "generalRate")
-            PFCloud.callFunction(inBackground: "rate", withParameters: ["usuario":PFUser.current()?.objectId,"tarjeta":self.viaSegueTarjeta.objectId,"rate":rating])
+            PFCloud.callFunction(inBackground: "rate", withParameters: ["usuario":PFUser.current()?.objectId ,"tarjeta":self.viaSegueTarjeta.objectId,"rate":rating])
             
         }
             
-//            starBtn.didTouchCosmos = { rating in
-//                print("didtouch \(rating)")
-//            }
             
         }
         
@@ -233,12 +236,48 @@ class TarjetaViewController: UIViewController {
         }else{
             
             // agregar la tarjeta
-            self.AfregarTarjeta()
+            self.AgregarTarjeta()
             self.btnAddDelete.setTitle("Eliminar", for: UIControlState())
             self.btnAddDelete.setTitleColor(UIColor.red, for: UIControlState())
             self.tarjetaesmia = true
             
         }
+        
+    }
+    @IBAction func botonMapa(_ sender: Any) {
+        
+        
+        let alert = UIAlertController(title: "Seleccione", message: "Navigation App", preferredStyle: .actionSheet)
+        
+        let strMapsIOS = String(format: "http://maps.apple.com/?ll=%F,%F",self.geoPoint.latitude,self.geoPoint.longitude)
+        let strMapsGoogle = String(format: "comgooglemaps://?q=%@?center=%F,%F&zoom=14",self.lb_empresa.text!,self.geoPoint.latitude,self.geoPoint.longitude)
+        let strMapsGoogleWEB = String(format: "https://maps.google.com/?q=%F,%F",self.geoPoint.latitude,self.geoPoint.longitude)
+        let strWaze = String(format: "https://waze.com/ul?ll=%F,%F&navigate=yes",self.geoPoint.latitude,self.geoPoint.longitude)
+        
+        if (UIApplication.shared.canOpenURL(URL(string: strMapsIOS)!)) {
+            alert.addAction(UIAlertAction(title: "Apple Maps", style: .default, handler: {(action) in
+                    UIApplication.shared.openURL(URL(string: strMapsIOS)!)
+            }))
+        }
+        if (UIApplication.shared.canOpenURL(URL(string: strMapsGoogle)!)) {
+            alert.addAction(UIAlertAction(title: "Google Maps", style: .default, handler: {(action) in
+                UIApplication.shared.openURL(URL(string: strMapsGoogle)!)
+            }))
+        } else {
+            // if GoogleMap App is not installed
+            alert.addAction(UIAlertAction(title: "Google Maps", style: .default, handler: {(action) in
+                UIApplication.shared.openURL(URL(string: strMapsGoogleWEB)!)
+            }))
+        }
+        if (UIApplication.shared.canOpenURL(URL(string: strWaze)!)) {
+            alert.addAction(UIAlertAction(title: "Waze", style: .default, handler: {(action) in
+                UIApplication.shared.openURL(URL(string: strWaze)!)
+            }))
+        }
+        
+        
+        alert.addAction(UIAlertAction(title: "cancelar", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -257,7 +296,7 @@ class TarjetaViewController: UIViewController {
         
         
     }
-    func AfregarTarjeta(){
+    func AgregarTarjeta(){
         let tarjeta = self.objectId
         PFUser.current()?.add(tarjeta, forKey: "tarjetas")
         do{
@@ -274,7 +313,7 @@ class TarjetaViewController: UIViewController {
         
     }
     
-    //funcions contrain
+    //funcions constrain
     
     func deleteContraintFB(){
         self.constraintDfb.constant = 0
@@ -287,6 +326,11 @@ class TarjetaViewController: UIViewController {
         self.btn_tw.isHidden = true
     }
     func deleteContraintWWW(){
+        self.constraintDwww.constant = 0
+        self.contraintWwww.constant = 0
+        self.btn_www.isHidden = true
+    }
+    func deleteContraintGeoPoint(){
         self.constraintDwww.constant = 0
         self.contraintWwww.constant = 0
         self.btn_www.isHidden = true

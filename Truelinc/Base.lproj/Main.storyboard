@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tU1-2a-l3k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tU1-2a-l3k">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1793,7 +1793,18 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43h-Ei-kYL">
                                 <rect key="frame" x="20" y="20" width="280" height="269"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y8v-VP-SIB">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="269"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="y8v-VP-SIB" firstAttribute="top" secondItem="43h-Ei-kYL" secondAttribute="top" id="1ut-p7-IkQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="y8v-VP-SIB" secondAttribute="bottom" id="9aI-Ri-GQB"/>
+                                    <constraint firstItem="y8v-VP-SIB" firstAttribute="leading" secondItem="43h-Ei-kYL" secondAttribute="leading" id="Rbc-L0-B0n"/>
+                                    <constraint firstAttribute="trailing" secondItem="y8v-VP-SIB" secondAttribute="trailing" id="XKp-v1-1vs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1807,10 +1818,13 @@
                             <constraint firstItem="Q1n-yg-U1p" firstAttribute="top" secondItem="43h-Ei-kYL" secondAttribute="bottom" constant="11" id="yh3-1W-dnD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="img_qr_Full" destination="y8v-VP-SIB" id="Ixy-g9-vHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffz-vL-YMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5903" y="-1531"/>
+            <point key="canvasLocation" x="5902.5" y="-1531.6901408450703"/>
         </scene>
         <!--Tarjeta View Controller-->
         <scene sceneID="BMg-YL-fcC">
@@ -2103,6 +2117,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="lxI-Cr-q8M"/>
                                                 </constraints>
                                                 <state key="normal" image="map"/>
+                                                <connections>
+                                                    <action selector="botonMapa:" destination="IFB-Mc-WuU" eventType="touchUpInside" id="CfK-eH-wps"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2389,6 +2406,7 @@
                         <outlet property="Scroll" destination="Rhs-dO-bUc" id="oFe-mL-UME"/>
                         <outlet property="btnAddDelete" destination="1Tk-6y-41X" id="qWq-7K-IvD"/>
                         <outlet property="btn_fb" destination="7aO-wA-CBM" id="uSe-6R-dX9"/>
+                        <outlet property="btn_mapa" destination="e8Y-31-4OQ" id="3yg-BM-IWF"/>
                         <outlet property="btn_tw" destination="b98-fd-45C" id="kDx-sh-iLR"/>
                         <outlet property="btn_www" destination="bXk-Aa-RfS" id="3UM-vV-ONh"/>
                         <outlet property="constraintDfb" destination="Nkt-ek-DvO" id="wzd-5g-sAL"/>
