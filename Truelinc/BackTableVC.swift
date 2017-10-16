@@ -16,7 +16,7 @@ class BackTableVC: UITableViewController{
     
     
     override func viewDidLoad() {
-        TableArray = ["Mis Tarjetas","Mi Perfil","Buscador","Camara","Log Out"]
+        TableArray = ["Mis Tarjetas","Mi Perfil","Buscador","Escanear Qr","Log Out"]
         self.tableMenu.tableFooterView = UIView(frame: CGRect.zero)
     }
     

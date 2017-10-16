@@ -33,6 +33,9 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
     
     
     var flagImage: String! = ""
+    var hashFoto:Int = 0
+    var hashLogo: Int = 0
+    
     var tarjeta: PFObject? = nil
     fileprivate let tagsField = WSTagsField()
     
@@ -82,7 +85,7 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
         
         tagsField.backgroundColor = .white
         tagsField.spaceBetweenTags = 10.0
-////        tagsField.font = .systemFont(ofSize: 12.0)
+//        tagsField.font = .systemFont(ofSize: 12.0)
 //        tagsField.tintColor = .green
 //        tagsField.textColor = .black
 //        tagsField.fieldTextColor = .blue
@@ -150,10 +153,12 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
         
         if let selectImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             if(flagImage == "logo"){
+                
                 logo.contentMode = .scaleAspectFill
                 logo.image = selectImage
             }
             if(flagImage == "foto"){
+                
                 foto.contentMode = .scaleAspectFill
                 foto.image = selectImage
             }
@@ -164,6 +169,7 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -213,16 +219,40 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
             })
             self.tarjeta?.setValue(tagsarr ,forKey: "tags")
             
-        
             
-        self.tarjeta?.saveInBackground(block: { (succes, err) in
-            if(succes){
-             alertController.dismiss(animated: true, completion: nil);
+            if self.hashFoto != self.foto.image?.hash {
+                print("cambie la foto")
+                if (self.foto.image?.size.width)! >= CGFloat(600.0) && (self.foto.image?.size.height)! >= CGFloat(400.0) {
+                    print("FOTO cambio de tam")
+                    self.foto.image = self.foto.image?.resizeImage(targetSize: CGSize(width: 600, height: 400))
+                }
+                let imageDataFOTO = UIImagePNGRepresentation(self.foto.image!)
+                let imageFileFOTO = PFFile(name:"foto.png", data:imageDataFOTO!)
+                self.tarjeta?["Foto"] = imageFileFOTO
             }
-        })
+            
+            if self.hashLogo != self.logo.image?.hash {
+                print("cambie el logo")
+                if (self.logo.image?.size.width)! >= CGFloat(350.0) && (self.logo.image?.size.height)! >= CGFloat(150.0){
+                print("logo cambio de tam")
+                        self.logo.image =  self.logo.image?.resizeImage(targetSize: CGSize(width: 350, height: 150))
+                }
+                
+                let imageDataLOGO = UIImagePNGRepresentation(self.logo.image!)
+                let imageFileLOGO = PFFile(name:"foto.png", data:imageDataLOGO!)
+                self.tarjeta?.setValue(imageFileLOGO, forKey: "LogoEmpresa")
+            }
+            
+            self.tarjeta?.saveInBackground(block: { (succes, err) in
+                if(succes){
+                    
+                    alertController.dismiss(animated: true, completion: nil);
+                }
+            })
         }
     }
-    
+
+
     func validationFailed(_ errors:[(Validatable ,ValidationError)]) {
         // turn the fields to red
         for (field, _) in errors {
@@ -386,6 +416,8 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
                             }
                         })
                     }
+                   self.hashFoto = (self.foto.image?.hash)!
+                   self.hashLogo = (self.logo.image?.hash)!
                     
                     if (self.tarjeta?.object(forKey: "GeoPoint") != nil ){
                         let address = self.tarjeta?.object(forKey: "GeoPoint") as? PFGeoPoint
@@ -400,9 +432,6 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
                         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
                         self.geoCoder = CLGeocoder()
                         self.mapView.delegate = self
-                        
-                        
-                        
                         
                     }else{
                         //obtener ubicacion actual
@@ -422,8 +451,36 @@ class MiTarjetaViewController: UIViewController, UINavigationControllerDelegate,
 
     }
     
+    
 }
-
+extension UIImage {
+    
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+}
 extension MiTarjetaViewController {
     fileprivate func textFieldEventss() {
         tagsField.onDidAddTag = { _ in

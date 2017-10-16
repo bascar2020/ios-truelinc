@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tU1-2a-l3k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tU1-2a-l3k">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -629,7 +629,7 @@
                                     <segue destination="Bjb-Ba-MwP" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="CUx-lf-9kA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Camara" textLabel="B2d-z0-KfO" detailTextLabel="dgE-tM-Tce" imageView="mrx-YH-FyY" style="IBUITableViewCellStyleValue1" id="LU5-Is-u9v">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Escanear Qr" textLabel="B2d-z0-KfO" detailTextLabel="dgE-tM-Tce" imageView="mrx-YH-FyY" style="IBUITableViewCellStyleValue1" id="LU5-Is-u9v">
                                 <rect key="frame" x="0.0" y="225" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LU5-Is-u9v" id="Xje-p3-F7C">
@@ -701,7 +701,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ww-2e-BIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233.5" y="-202.5"/>
+            <point key="canvasLocation" x="2138" y="-239"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="568-ef-gJ7">
@@ -745,39 +745,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWa-1c-F7f">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="775"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Camara.png" translatesAutoresizingMaskIntoConstraints="NO" id="icS-IH-WaM">
-                                        <rect key="frame" x="8" y="135" width="304" height="163"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logolargo.png" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-Qp-udC">
-                                        <rect key="frame" x="72" y="410" width="177" height="49"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camara.png" translatesAutoresizingMaskIntoConstraints="NO" id="icS-IH-WaM">
+                                        <rect key="frame" x="55" y="109" width="304" height="163"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="49" id="UmV-3p-o2y"/>
-                                            <constraint firstAttribute="width" constant="177" id="qma-3p-PSv"/>
+                                            <constraint firstAttribute="height" constant="163" id="1Lr-ge-yDt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logolargo.png" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-Qp-udC">
+                                        <rect key="frame" x="119" y="363" width="177" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="177" id="Bf8-n3-gDO"/>
+                                            <constraint firstAttribute="height" constant="49" id="pgY-vx-YKF"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="icS-IH-WaM" firstAttribute="centerX" secondItem="cWa-1c-F7f" secondAttribute="centerX" id="5xJ-gC-zzZ"/>
-                                    <constraint firstItem="icS-IH-WaM" firstAttribute="top" secondItem="cWa-1c-F7f" secondAttribute="top" constant="135" id="A3c-Yd-z8P"/>
-                                    <constraint firstItem="icS-IH-WaM" firstAttribute="leading" secondItem="cWa-1c-F7f" secondAttribute="leading" constant="8" id="Cze-lc-feh"/>
-                                    <constraint firstAttribute="bottom" secondItem="SCV-Qp-udC" secondAttribute="bottom" constant="65" id="JwE-vP-4yD"/>
-                                    <constraint firstAttribute="trailing" secondItem="icS-IH-WaM" secondAttribute="trailing" constant="8" id="NCP-jo-jvU"/>
-                                    <constraint firstItem="SCV-Qp-udC" firstAttribute="top" secondItem="icS-IH-WaM" secondAttribute="bottom" constant="112" id="h4y-Vp-Wf0"/>
-                                    <constraint firstItem="icS-IH-WaM" firstAttribute="centerY" secondItem="cWa-1c-F7f" secondAttribute="centerY" constant="-45.5" id="iX4-eH-Tfw"/>
+                                    <constraint firstItem="icS-IH-WaM" firstAttribute="leading" secondItem="cWa-1c-F7f" secondAttribute="leading" constant="55" id="5Su-Fd-04J"/>
+                                    <constraint firstItem="icS-IH-WaM" firstAttribute="centerX" secondItem="SCV-Qp-udC" secondAttribute="centerX" id="CCN-rc-Kge"/>
+                                    <constraint firstItem="SCV-Qp-udC" firstAttribute="centerY" secondItem="cWa-1c-F7f" secondAttribute="centerY" id="SLf-83-Yum"/>
+                                    <constraint firstItem="icS-IH-WaM" firstAttribute="centerX" secondItem="cWa-1c-F7f" secondAttribute="centerX" id="fZS-kW-LYq"/>
+                                    <constraint firstItem="SCV-Qp-udC" firstAttribute="top" secondItem="icS-IH-WaM" secondAttribute="bottom" constant="91" id="oXY-0F-NXt"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vLw-uW-DnU" firstAttribute="top" secondItem="cWa-1c-F7f" secondAttribute="bottom" id="4Tm-go-3bf"/>
-                            <constraint firstItem="g5r-za-iAD" firstAttribute="leading" secondItem="fTS-hV-gWO" secondAttribute="leading" id="9YJ-ka-Ypk"/>
-                            <constraint firstAttribute="trailing" secondItem="g5r-za-iAD" secondAttribute="trailing" id="LIj-Nb-cqn"/>
-                            <constraint firstItem="cWa-1c-F7f" firstAttribute="leading" secondItem="fTS-hV-gWO" secondAttribute="leading" id="XRO-V8-mhE"/>
-                            <constraint firstItem="vLw-uW-DnU" firstAttribute="top" secondItem="g5r-za-iAD" secondAttribute="bottom" id="eDn-hE-4Qe"/>
-                            <constraint firstAttribute="trailing" secondItem="cWa-1c-F7f" secondAttribute="trailing" id="ghK-RK-LHa"/>
-                            <constraint firstItem="g5r-za-iAD" firstAttribute="top" secondItem="fTS-hV-gWO" secondAttribute="top" id="mzy-ka-DTs"/>
-                            <constraint firstItem="cWa-1c-F7f" firstAttribute="top" secondItem="fTS-hV-gWO" secondAttribute="top" id="uja-v2-oYL"/>
+                            <constraint firstItem="g5r-za-iAD" firstAttribute="trailing" secondItem="cWa-1c-F7f" secondAttribute="trailing" id="LaX-hw-Lrs"/>
+                            <constraint firstItem="g5r-za-iAD" firstAttribute="leading" secondItem="cWa-1c-F7f" secondAttribute="leading" id="VI1-h1-3B8"/>
+                            <constraint firstAttribute="trailing" secondItem="g5r-za-iAD" secondAttribute="trailing" id="Wf8-gd-Zhw"/>
+                            <constraint firstItem="cWa-1c-F7f" firstAttribute="bottom" secondItem="vLw-uW-DnU" secondAttribute="top" id="WwI-Ua-Sb2"/>
+                            <constraint firstItem="cWa-1c-F7f" firstAttribute="top" secondItem="fTS-hV-gWO" secondAttribute="top" id="dZC-qp-LWp"/>
+                            <constraint firstItem="g5r-za-iAD" firstAttribute="top" secondItem="cWa-1c-F7f" secondAttribute="top" id="t0R-No-PwO"/>
+                            <constraint firstItem="cWa-1c-F7f" firstAttribute="leading" secondItem="fTS-hV-gWO" secondAttribute="leading" id="tqS-vb-Sem"/>
+                            <constraint firstItem="g5r-za-iAD" firstAttribute="bottom" secondItem="vLw-uW-DnU" secondAttribute="top" id="yrD-4L-gre"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NnN-Ln-R2V">
@@ -1466,7 +1467,7 @@
                                         <rect key="frame" x="0.0" y="72" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tYA-vs-YLL" id="RfH-7J-ya0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_perfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="AAV-bd-Wbh">
@@ -1599,7 +1600,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7BR-Ba-bZE" id="OhM-3f-mbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="106.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_perfil.png" translatesAutoresizingMaskIntoConstraints="NO" id="00q-bz-LCQ">
@@ -2487,9 +2488,9 @@
         <image name="www" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FQZ-zI-gUK"/>
         <segue reference="n8s-S9-REK"/>
         <segue reference="ZEY-Dt-u5D"/>
-        <segue reference="gTs-Z4-Fby"/>
+        <segue reference="FQZ-zI-gUK"/>
+        <segue reference="YoD-QR-6Sk"/>
     </inferredMetricsTieBreakers>
 </document>

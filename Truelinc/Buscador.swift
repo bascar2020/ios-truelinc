@@ -15,6 +15,13 @@ enum selectorScope:Int {
     case pais = 2
 }
 
+enum distanciaKm:Double {
+    case cerca = 10.0
+    case ciudad = 100.0
+    case pais = 500.0
+}
+
+
 class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, SWRevealViewControllerDelegate {
     
 
@@ -23,6 +30,9 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
     @IBOutlet weak var mySearchBar: UISearchBar!
     
     var resultFilter = [PFObject]()
+    var cercaFilter = [PFObject]()
+    var ciudadFilter = [PFObject]()
+    var paisFilter = [PFObject]()
     var misTarjetas = [String]()
     
     override func viewDidLoad() {
@@ -59,10 +69,30 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
 // MARK: - search bar delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-     
+        
     }
     
-    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+        self.resultFilter.removeAll(keepingCapacity: false)
+        switch searchBar.selectedScopeButtonIndex {
+        case selectorScope.cerca.rawValue: //cerca
+            self.resultFilter = self.cercaFilter
+        case selectorScope.ciudad.rawValue: //Ciudad
+            self.resultFilter = self.ciudadFilter
+        case selectorScope.pais.rawValue: //Pais
+            self.resultFilter = self.paisFilter
+        default:
+            self.resultFilter = self.cercaFilter
+        }
+        
+        DispatchQueue.main.async{
+            self.tableTarjetas.reloadData()
+            self.mySearchBar.resignFirstResponder()
+        }
+        
+        
+    }
     
     
     
@@ -106,7 +136,7 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
                     let image = UIImage(data: imageData!)
                     singleCell.img_logo.image = image
                 }else{
-                    print("error",error)
+                   // print("error",error)
                 }
             })
             
@@ -122,7 +152,7 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
                     singleCell.img_foto.image = image
                     
                 }else{
-                    print("error",error)
+                  //  print("error",error)
                 }
             })
         }else{
@@ -136,51 +166,107 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
     
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-      if Reachability.isConnectedToNetwork() == true {
-        mySearchBar.resignFirstResponder()
-        
-        let nombreQuery = PFQuery(className: "Tarjetas")
-        nombreQuery.whereKey("Privada", equalTo: false)
-        nombreQuery.whereKey("Nombre", contains: (searchBar.text!.lowercased()))
-        
-        let empresaQuery = PFQuery(className: "Tarjetas")
-        empresaQuery.whereKey("Privada", equalTo: false)
-        empresaQuery.whereKey("Empresa", contains: (searchBar.text!.lowercased()))
-        
-        let tagsQuery = PFQuery(className: "Tarjetas")
-        tagsQuery.whereKey("Privada", equalTo: false)
-        tagsQuery.whereKey("tags", containedIn: [searchBar.text!.lowercased()])
-        
-        if !self.misTarjetas.isEmpty {
-            nombreQuery.whereKey("objectId", notContainedIn: self.misTarjetas)
-            empresaQuery.whereKey("objectId", notContainedIn: self.misTarjetas)
-            tagsQuery.whereKey("objectId", notContainedIn: self.misTarjetas)
+        if !(searchBar.text?.isEmpty)!{
+            searchTarjetas(searchBar)
         }
         
-        let query = PFQuery.orQuery(withSubqueries: [nombreQuery,empresaQuery,tagsQuery])
-        
-        query.findObjectsInBackground { (results:[PFObject]?, error)  in
-            if error != nil {
-                let myAlert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-                
-                myAlert.addAction(okAction)
-                self.present(myAlert, animated: true, completion: nil)
-
-                return
-            }else{
-                self.resultFilter.removeAll(keepingCapacity: false)
-                for  tarjeta in results! {
-                    self.resultFilter.append(tarjeta)
-                }
-                DispatchQueue.main.async{
-                    self.tableTarjetas.reloadData()
-                    self.mySearchBar.resignFirstResponder()
-                }
+    }
+    
+    func searchTarjetas(_ searchBar: UISearchBar) {
+        if Reachability.isConnectedToNetwork() == true {
+            mySearchBar.resignFirstResponder()
+            
+            var kilometers:Double
+            switch searchBar.selectedScopeButtonIndex {
+            case 0: //cerca
+                kilometers = distanciaKm.cerca.rawValue
+            case 1: //Ciudad
+                kilometers = distanciaKm.ciudad.rawValue
+            case 2: //Pais
+                kilometers = distanciaKm.pais.rawValue
+            default:
+                kilometers = distanciaKm.cerca.rawValue
             }
-        }
-      }else
+            
+            PFGeoPoint.geoPointForCurrentLocation(inBackground: { (geopoint, error) in
+                if error != nil{
+                    let myAlert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                    
+                    myAlert.addAction(okAction)
+                    self.present(myAlert, animated: true, completion: nil)
+                }else{
+                    print(geopoint)
+                    let nombreQuery = PFQuery(className: "Tarjetas")
+                    nombreQuery.whereKey("Privada", equalTo: false)
+                    nombreQuery.whereKey("Nombre", contains: (searchBar.text!.lowercased()))
+                    
+                    let empresaQuery = PFQuery(className: "Tarjetas")
+                    empresaQuery.whereKey("Privada", equalTo: false)
+                    empresaQuery.whereKey("Empresa", contains: (searchBar.text!.lowercased()))
+                    
+                    let tagsQuery = PFQuery(className: "Tarjetas")
+                    tagsQuery.whereKey("Privada", equalTo: false)
+                    tagsQuery.whereKey("tags", containedIn: [searchBar.text!.lowercased()])
+                    
+                    
+                    
+                    if !self.misTarjetas.isEmpty {
+                        nombreQuery.whereKey("objectId", notContainedIn: self.misTarjetas)
+                        empresaQuery.whereKey("objectId", notContainedIn: self.misTarjetas)
+                        tagsQuery.whereKey("objectId", notContainedIn: self.misTarjetas)
+                        
+                    }
+                    
+                    let query = PFQuery.orQuery(withSubqueries: [nombreQuery,empresaQuery,tagsQuery])
+                    
+                    
+                    query.findObjectsInBackground { (results:[PFObject]?, error)  in
+                        if error != nil {
+                            let myAlert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                            
+                            myAlert.addAction(okAction)
+                            self.present(myAlert, animated: true, completion: nil)
+                            
+                            return
+                        }else{
+                            self.resultFilter.removeAll(keepingCapacity: false)
+                            self.cercaFilter.removeAll()
+                            self.ciudadFilter.removeAll()
+                            self.paisFilter.removeAll()
+                            for  tarjeta in results! {
+                                
+                                if((tarjeta.object(forKey: "GeoPoint") as! PFGeoPoint).distanceInKilometers(to: geopoint)<=kilometers){
+                                    self.resultFilter.append(tarjeta)
+                                }
+                                
+                                if((tarjeta.object(forKey: "GeoPoint") as! PFGeoPoint).distanceInKilometers(to: geopoint).isLess(than: distanciaKm.cerca.rawValue)){
+                                    self.cercaFilter.append(tarjeta)
+                                }
+                                print((tarjeta.object(forKey: "GeoPoint") as! PFGeoPoint).distanceInKilometers(to: geopoint))
+                                print(tarjeta.object(forKey: "GeoPoint") as! PFGeoPoint)
+                                if((tarjeta.object(forKey: "GeoPoint") as! PFGeoPoint).distanceInKilometers(to: geopoint).isLess(than: distanciaKm.ciudad.rawValue)){
+                                    self.ciudadFilter.append(tarjeta)
+                                }
+                                
+                                if((tarjeta.object(forKey: "GeoPoint") as! PFGeoPoint).distanceInKilometers(to: geopoint).isLess(than: distanciaKm.pais.rawValue)){
+                                    self.paisFilter.append(tarjeta)
+                                }
+                            }
+                            DispatchQueue.main.async{
+                                self.tableTarjetas.reloadData()
+                                self.mySearchBar.resignFirstResponder()
+                            }
+                        }
+                    }
+                }
+            })
+            
+            
+            
+            
+        }else
         {
             let myAlert = UIAlertController(title: "Tenemos un Problema!", message: "Comprueba tu conexion y vuelve a intentarlo", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
@@ -188,9 +274,8 @@ class Buscador : UIViewController, UITableViewDataSource, UISearchBarDelegate, S
             myAlert.addAction(okAction)
             self.present(myAlert, animated: true, completion: nil)
         }
-        
+
     }
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         mySearchBar.resignFirstResponder()
         mySearchBar.text = ""
